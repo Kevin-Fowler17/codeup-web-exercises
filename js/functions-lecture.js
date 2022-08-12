@@ -1,39 +1,39 @@
 "use strict";
-// // The parts of a function
-// // 1. function keyword
-// // 2. The name of the function
-// // 3. Parentheses with zero or more parameters
-// // 4. If there is more than on parameter, the list is comma separate
-// // 5. Curly braces contain the function body
-// // 6. The function body contains the code that runs when the function is invoked
-// // 7. The return statement (optional, but common)
-// function sayHello (greeting, name) {
-//     console.log `${greeting}, ${name}`;
-// }
-//
-//
-// // // Here, number has local scope
-// // function localOrGlobal(){
-// //     let number = 20;
-// // }
-// //
-// // // Here, number has global scope
-// // let number = 20;
-// // function localOrGlobal(){
-// //     console.log(number);
-// // }
-//
-// let number = 20;
-//
-// // function declaration
-// function localOrGlobal() {
-//     let number = 10;
-//     console.log(number);
-//     anotherNumber = 23;
-// }
-// localOrGlobal();
-// console.log(number);
-// // console.log(anotherNumber);
+// The parts of a function
+// 1. function keyword
+// 2. The name of the function
+// 3. Parentheses with zero or more parameters
+// 4. If there is more than on parameter, the list is comma separate
+// 5. Curly braces contain the function body
+// 6. The function body contains the code that runs when the function is invoked
+// 7. The return statement (optional, but common)
+function sayHello (greeting, name) {
+    console.log `${greeting}, ${name}`;
+}
+
+
+// Here, number has local scope
+function localOrGlobal(){
+    let number = 20;
+}
+
+// Here, number has global scope
+let number = 20;
+function localOrGlobal(){
+    console.log(number);
+}
+
+let number = 20;
+
+// function declaration
+function localOrGlobal() {
+    let number = 10;
+    console.log(number);
+    anotherNumber = 23;
+}
+localOrGlobal();
+console.log(number);
+// console.log(anotherNumber);
 
 // function expression
 // funcation expressions are not hoisted
