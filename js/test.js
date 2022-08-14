@@ -23,13 +23,11 @@ const books = [
     }
 ]
 
-function getAverageBookPric(objects){
+function getAverageBookPrice(objects){
 
     let sum = objects.reduce((accumulator, object) => {return accumulator + object.price;}, 0);
-    let avg = (sum / objects.length);
 
-    return avg;
+    return (sum / objects.length);
+    console.log(sum);
 
 }
-
-console.log(avg);
