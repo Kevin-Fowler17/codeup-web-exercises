@@ -9,7 +9,7 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
 function sayHello(name) {
-    console.log(`Hello, ${name}`);
+    return ("Hello, " + name + "!");
 }
 
 /**
@@ -19,7 +19,8 @@ function sayHello(name) {
  *
  * console.log 'helloMessage' to check your work
  */
-const helloMesasge = (sayHello("Kevin"));
+let helloMesasge = (sayHello("Kevin"));
+console.log(helloMesasge)
 
 /**
  * TODO:
@@ -54,9 +55,9 @@ var random = Math.floor((Math.random() * 3) + 1);
  */
 function isTwo(number){
     if (number === 2) {
-        console.log(true)
+        return true;
     } else {
-        console.log(false)
+        return false;
     }
 }
 
@@ -84,9 +85,10 @@ function calculateTip(tipPercentage, billTotal){
  * then display the dollar amount they should tip
  */
 let billTotalEntered = prompt("What is the bill total?");
-let tipAmount = prompt("What percentage would you like to tip?");
+let tipPercentage = prompt("What percentage would you like to tip?");
 
-console.log("Your tip amount is $" + calculateTip(tipAmount, billTotalEntered));
+let tipAmount = calculateTip(tipPercentage/100, billTotalEntered);
+alert("Your tip is $" + tipAmount + ".");
 
 /**
  * TODO:
