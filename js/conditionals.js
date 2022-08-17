@@ -23,17 +23,17 @@
  */
 // function analyzeColor(color) {
 //     if (color === "blue") {
-//         console.log("Blue is my favorite color?");
+//         return "Blue is my favorite color?";
 //     } else if (color === "red") {
-//         console.log("Red means stop");
+//         return "Red means stop";
 //     } else if (color === "orange") {
-//         console.log("Orange is a fruit.");
+//         return "Orange is a fruit.";
 //     } else if (color === "green") {
-//         console.log("Green is the color of money.");
+//         return "Green is the color of money.";
 //     } else if (color === "yellow") {
-//         console.log("Yellow is the color of the sun.");
+//         return "Yellow is the color of the sun.";
 //     } else {
-//         console.log("I don't care about that color.");
+//        return "I don't care about that color.";
 //     }
 // }
 
@@ -50,7 +50,7 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Pass the `randomColor` variable to your 'analyzeColor' function and console.log the results.
  * You should see a different message every time you refresh the page
  */
-// analyzeColor(randomColor);
+//console.log(analyzeColor(randomColor));
 
 
 /**
@@ -205,4 +205,8 @@ function negativePositive(numberEntered) {
     } else {
         return alert(" The number " + numberEntered + " is neither positive or negative.");
     }
+}
+
+function isNumber(value) {
+    return !(isNaN(value)) || typeof value === false)
 }
