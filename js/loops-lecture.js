@@ -1,3 +1,7 @@
+/*
+While loop examples
+ */
+
 // let slices = 4;
 // console.log(`There are ${slices} slices.`);
 // while (slices > 0){
@@ -51,16 +55,28 @@
 //     }
 // }
 
-let total = 0;
-let priceOfItem;
-while (true){
-    let userInput = prompt("Enter STOP when you are done" + "/n Enter the price of your item.");
-    if (userInput === "STOP") {
-        alert("Your final total is $" + total.toFixed(2));
-        break;
-    } else {
-        priceOfItem = parseFloat(userInput);
-        total += priceOfItem;
-        alert("Your total is " + total.toFixed(2));
-    }
-}
+// let total = 0;
+// let priceOfItem;
+// while (true){
+//     let userInput = prompt("Enter STOP when you are done" + "/n Enter the price of your item.");
+//     if (userInput === "STOP") {
+//         alert("Your final total is $" + total.toFixed(2));
+//         break;
+//     } else {
+//         priceOfItem = parseFloat(userInput);
+//         total += priceOfItem;
+//         alert("Your total is " + total.toFixed(2));
+//     }
+// }
+
+/*
+Do While loop examples
+ */
+
+let number = Math.ceil(Math.random() * 6);
+let guess;
+console.log(guess);
+do {
+    guess = parseInt(prompt("Enter a number between 1 and 6"));
+} while (guess !== number);
+alert(`Your guess of ${guess} matches the number ${number}.`)
