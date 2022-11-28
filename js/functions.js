@@ -8,9 +8,10 @@
  * Example
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
-function sayHello(name) {
-    return ("Hello, " + name + "!");
+function sayHello (name) {
+    return (`Hello ${name}!`)
 }
+
 
 /**
  * TODO:
@@ -19,8 +20,8 @@ function sayHello(name) {
  *
  * console.log 'helloMessage' to check your work
  */
-let helloMessage = (sayHello("Kevin"));
-console.log(helloMessage)
+let helloMessage = sayHello('Kevin');
+console.log(helloMessage);
 
 /**
  * TODO:
@@ -28,9 +29,10 @@ console.log(helloMessage)
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
+let myName = 'Kevin';
+let helloMessage2 = sayHello(myName);
+console.log(helloMessage2);
 
-let myName = ("Kevin");
-console.log(sayHello(myName));
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -57,7 +59,8 @@ function isTwo(number){
     return number === 2;
 }
 
-console.log(isTwo(random));
+console.log(isTwo(random), random);
+
 
 /**
  * TODO:
@@ -70,9 +73,10 @@ console.log(isTwo(random));
  * > calculateTip(0.25, 25.50) // returns 6.375
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
-function calculateTip(tipPercentage, billTotal){
-    return billTotal * tipPercentage;
+function calculateTip(tipPercentageMsg, totalBillMsg){
+    return totalBillMsg * tipPercentageMsg;
 }
+
 
 /**
  * TODO:
@@ -80,11 +84,12 @@ function calculateTip(tipPercentage, billTotal){
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
-let billTotalEntered = prompt("What is the bill total?");
-let tipPercentage = prompt("What percentage would you like to tip?");
+let totalBill = prompt("What is the total price of the bill?");
+let tipPercentage = prompt("What percentage do you want to tip?");
+let tipAmount = calculateTip(tipPercentage, totalBill);
 
-let tipAmount = calculateTip(tipPercentage/100, billTotalEntered);
-alert("Your tip is $" + tipAmount + ".");
+alert(`The tip amount is $${tipAmount}.`);
+
 
 /**
  * TODO:
@@ -100,6 +105,12 @@ alert("Your tip is $" + tipAmount + ".");
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
-function applyDiscount (priceBeforeDiscount, discountPercentage){
-    return priceBeforeDiscount - (priceBeforeDiscount * discountPercentage);
+function applyDiscount(priceBeforeDiscountMsg, discountPercentageMsg){
+    return priceBeforeDiscountMsg - (priceBeforeDiscountMsg * discountPercentageMsg);
 }
+
+let priceBeforeDiscount = prompt("What is the price before discount?");
+let discountPercentage = prompt("What is the discount percentage?");
+let priceAfterDiscount = applyDiscount(priceBeforeDiscount, discountPercentage);
+
+alert(`The price after discount is $${priceAfterDiscount}`);
