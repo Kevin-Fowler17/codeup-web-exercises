@@ -40,7 +40,7 @@ for (let i = 1; i <= 9; i++) {
 
 
 function decreaseByFive() {
-    for (let i = 100; i >= 5;i = i - 5) {
+    for (let i = 100; i >= 5; i -= 5) {
         console.log(i);
     }
 }
