@@ -22,7 +22,7 @@
  * console.logging the function's return value
  */
 // function analyzeColor(color){
-//     if (color === "red") {
+//     if (color.toLowerCase() === "red") {
 //         console.log("Red means stop!");
 //     } else if (color === "blue") {
 //         console.log("Blue is my favorite color.");
@@ -60,7 +60,7 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  */
 function analyzeColor(color) {
 
-    switch (color){
+    switch (color.toLowerCase()){
         case "red":
             alert(color + " means stop!");
             break;
