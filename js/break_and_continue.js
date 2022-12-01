@@ -1,3 +1,5 @@
+'use strict';
+
 for (let number = 0; number < 1 || number > 50 || number % 2 === 0 || isNaN(number);) {
 
     number = parseFloat(prompt(`Enter an odd number between 1 and 50.`))
