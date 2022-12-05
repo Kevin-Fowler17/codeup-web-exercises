@@ -26,7 +26,8 @@
      */
     let planetsStringTwo = planetsArray.join('<br>');
     console.log(planetsStringTwo);
-    let planetsStringThree = "<ul><li>" + planetsArray.join("<li>") + "</ul>"
+    let planetsStringThree = "<ul><li>" + planetsArray.join("</li><li>") + "</li></ul>"
     console.log(planetsStringThree);
+    document.write(planetsStringThree)
 
 })();
