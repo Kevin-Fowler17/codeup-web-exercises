@@ -187,9 +187,32 @@
      *   `showBookInfo` function.
      */
 
-    function createBook(title, author){
+    let bookTwo = {};
+
+    function createBook(input1, input2, input3) {
+        bookTwo = {
+            title: input1,
+            author: {
+                firstName: input2,
+                lastName: input3
+            }
+        };
+    }
+
+    createBook ("Harry Potter and the Sorcerer's Stone", "J. K.", "Rowling");
+    createBook ("Green Eggs and Ham", "Dr.", "Seuss");
+    createBook ("Where the Sidewalk Ends", "Shel", "Silverstein");
+    createBook ("Silly Tilly", "Eillen", "Spinelli");
+    createBook ("No One Likes a Fart", "Zoe", "Blake Foster");
+
+    console.log(bookTwo);
+
+
+
+
+    function showBookInfo () {
 
     }
-    createBook();
+    showBookInfo();
 
 })();
