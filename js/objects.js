@@ -88,6 +88,7 @@
     });
 
 
+
     /** TODO:
      * Create an array of objects that represent books and store it in a
      * variable named `books`. Each object should have a title and an author
@@ -100,6 +101,47 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+
+    let books = [
+        {
+            title: "Harry Potter and the Sorcerer's Stone",
+            author: {
+                firstName: "J. K.",
+                lastName: "Rowling"
+            }
+        },
+        {
+            title: "Green Eggs and Ham",
+            author: {
+                firstName: "Dr.",
+                lastName: "Seuss"
+            }
+        },
+        {
+            title: "Where the Sidewalk Ends",
+            author: {
+                firstName: "Shel",
+                lastName: "Silverstein"
+            }
+        },
+        {
+            title: "Silly Tilly",
+            author: {
+                firstName: "Eillen",
+                lastName: "Spinelli"
+            }
+        },
+        {
+            title: "No One Likes a Fart",
+            author: {
+                firstName: "Zoe",
+                lastName: "Blake Foster"
+            }
+        }
+    ];
+
+    console.log(books);
+
 
     /**
      * TODO:
@@ -126,6 +168,14 @@
      *      ...
      */
 
+    books.forEach(function(book) {
+        console.log("Book # " + (books.indexOf(book) + 1));
+        console.log("Title: " + book.title);
+        console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+        console.log("---");
+    });
+
+
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -136,5 +186,10 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+    function createBook(title, author){
+
+    }
+    createBook();
 
 })();
