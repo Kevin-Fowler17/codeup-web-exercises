@@ -18,6 +18,7 @@
     }
 
     console.log(person.firstName + " " + person.lastName);
+    console.log(person);
 
 
     /**
@@ -73,7 +74,7 @@
         //     }
         // }
 
-    shoppers.forEach(function(shopper) {
+    shoppers.forEach(function(shopper, idx) {
         if (shopper.amount > 200) {
            console.log("Name: " + shopper.name);
            console.log("Amount before discount: $" + shopper.amount);
@@ -168,12 +169,19 @@
      *      ...
      */
 
-    books.forEach(function(book) {
-        console.log("Book # " + (books.indexOf(book) + 1));
+    books.forEach(function(book, index) {
+        console.log("Book # " + (index + 1));
         console.log("Title: " + book.title);
         console.log("Author: " + book.author.firstName + " " + book.author.lastName);
         console.log("---");
     });
+
+    for (const book of books) {
+        console.log("Book # " + (books.indexOf(book) + 1));
+        console.log("Title: " + book.title);
+        console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+        console.log("---");
+    }
 
 
     /**
@@ -187,32 +195,39 @@
      *   `showBookInfo` function.
      */
 
-    let bookTwo = {};
+    function createBook(title, fName, lName) {
 
-    function createBook(input1, input2, input3) {
-        bookTwo = {
-            title: input1,
+        let book = {
+            title: title,
             author: {
-                firstName: input2,
-                lastName: input3
+                firstName: fName,
+                lastName: lName
             }
         };
+
+        book.showBookInfo = function (index){
+            console.log("Book # " + (index));
+            console.log("Title: " + this.title);
+            console.log("Author: " + this.author.firstName + " " + this.author.lastName);
+            console.log("---");
+        };
+
+        return book;
     }
 
-    createBook ("Harry Potter and the Sorcerer's Stone", "J. K.", "Rowling");
-    createBook ("Green Eggs and Ham", "Dr.", "Seuss");
-    createBook ("Where the Sidewalk Ends", "Shel", "Silverstein");
-    createBook ("Silly Tilly", "Eillen", "Spinelli");
-    createBook ("No One Likes a Fart", "Zoe", "Blake Foster");
+    books = [];
+    books.push(createBook("Dune", "Frank", "Herbert"));
+    books.push(createBook("Book 2", "Frank1", "Herbert1"));
+    books.push(createBook("Book 3", "Frank2", "Herbert2"));
+    books.push(createBook("Book 4", "Frank3", "Herbert3"));
+    books.push(createBook("Book 5", "Frank4", "Herbert4"));
+    console.log(books);
 
-    console.log(bookTwo);
-
-
-
-
-    function showBookInfo () {
-
+    let index = 1;
+    for (const book of books) {
+        book.showBookInfo(index);
+        index++;
     }
-    showBookInfo();
+
 
 })();
