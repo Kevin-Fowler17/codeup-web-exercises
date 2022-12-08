@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="js/github.js"></script>
+    <link rel="stylesheet" href="css/github.css">
+    <title>Github</title>
+</head>
+<body>
+
+<header>
+  <table id="headTable">
+    <th><img src="graphics/kitten.jpg" width="50" height="auto"></th>
+    <th>Pull requests</th>
+    <th>Issues</th>
+    <th>Marketplace</th>
+    <th>Explore</th>
+  </table>
+</header>
+
+<nav>
+
+</nav>
+
+<main>
+    <p>
+        <img src="graphics/Codeup.jpeg" width="100" height="auto">
+    </p>
+
+    <p>
+
+    <!-- Tab links -->
+    <div class="tabs">
+        <span data-tab-value="#Repositories">Repositories</span>
+        <span data-tab-value="#People">People</span>
+        <span data-tab-value="#Teams">Teams</span>
+        <span data-tab-value="#Projects">Projects</span>
+        <span data-tab-value="#Settings">Settings</span>
+    </div>
+
+    <div class="tab-content">
+        <div class="tabs__tab active" id="Repositories" data-tab-info>
+            <p>Repository stuff goes here!</p>
+
+        </div>
+        <div class="tabs__tab" id="People" data-tab-info>
+            <p>
+            Codeup's dev team
+            </p>
+            <table id="peopleTable">
+                <tr>
+                    <th><img src="graphics/avatar.png" width="35" height="auto"></th>
+                    <td>Kent Beck Member 1 team<br>KevinBeck</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th><img src="graphics/avatar.png" width="35" height="auto"></th>
+                    <td>Codeup Instructional Staff Member 1 team<br>CodeupInstructors</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th><img src="graphics/avatar.png" width="35" height="auto"></th>
+                    <td>Martin Fowler Member 1 team</td>
+                </tr>
+            </table>
+
+        </div>
+        <div class="tabs__tab" id="Teams" data-tab-info>
+            <p>Teams infor goes here!</p>
+
+        </div>
+        <div class="tabs__tab" id="Projects" data-tab-info>
+            <p>Projects stuff goes here!</p>
+
+        </div>
+        <div class="tabs__tab" id="Settings" data-tab-info>
+            <p>Learn cool stuff.</p>
+
+        </div>
+        <script type="text/javascript">
+            const tabs = document.querySelectorAll('[data-tab-value]')
+            const tabInfos = document.querySelectorAll('[data-tab-info]')
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const target = document
+                        .querySelector(tab.dataset.tabValue);
+
+                    tabInfos.forEach(tabInfo => {
+                        tabInfo.classList.remove('active')
+                    })
+                    target.classList.add('active');
+                })
+            })
+        </script>
+    </div>
+    </p>
+</main>
+
+<footer>
+
+</footer>
+
+</body>
+</html>

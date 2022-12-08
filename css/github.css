@@ -1,0 +1,48 @@
+header {
+    background: black;
+}
+
+th {
+    text-align: left;
+    color: whitesmoke;
+    font-family: sans-serif;
+}
+
+#headTable {
+    table-layout: auto;
+    width: 500px;
+}
+#peopleTable {
+    table-layout: auto;
+    width: 400px;
+}
+
+
+
+
+[data-tab-info] {
+    display: none;
+}
+
+.active[data-tab-info] {
+    display: block;
+}
+
+.tab-content {
+    font-family: sans-serif;
+    color: rgb(82, 75, 75);
+}
+
+.tabs {
+    color: black;
+    display: flex;
+    margin: 0;
+}
+
+.tabs span {
+    background: whitesmoke;
+    padding: 10px;
+    border: 1px solid rgb(255, 255, 255);
+}
+
+
