@@ -2,3 +2,60 @@
     color: purple;
 }
 
+header {
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: purple;
+    text-decoration: underline;
+}
+
+/* * {background-color: pink} */
+/* html {background-color: pink} */
+
+body {
+    font-family: "American Typewriter", sans-serif;
+    background: cornflowerblue url("../graphics/kitten.jpg") no-repeat center;
+/*  background-color: cornflowerblue;
+    background-image: url("../graphics/kitten.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+*/
+    background-size: 400px;
+}
+
+ul {
+    list-style-type: upper-roman;
+}
+
+tr {
+    font-size: 40px;
+    padding-left: 100px;
+
+}
+
+td {
+    font-size: 25px;
+    padding-left: 50px;
+}
+
+/* unvisited link (:link) */
+a:link {
+    color:red;
+}
+
+/* visited link (:visited) */
+a:visited {
+    color:black;
+}
+
+/* mouse hover over link (:hover) */
+a:hover {
+    color:blue;
+}
+
+/* active/selected link (:active) */
+a:active {
+    color:green;
+}
