@@ -116,15 +116,29 @@
 //     });
 // });
 
-function roundFloat(floatNum, decimalDigit) {
-    // 1. multiple floatNum by 10 to the power of decimalDigit
-    floatNum = floatNum * (10 ** decimalDigit);
-    // 2. call Math.round on floatNum
-    floatNum = Math.round(floatNum);
-    // 3. divide floatNum by 10 to the power of decimalDigit
-    floatNum = floatNum / (10 ** decimalDigit);
+// function roundFloat(floatNum, decimalDigit) {
+//     // 1. multiple floatNum by 10 to the power of decimalDigit
+//     floatNum = floatNum * (10 ** decimalDigit);
+//     // 2. call Math.round on floatNum
+//     floatNum = Math.round(floatNum);
+//     // 3. divide floatNum by 10 to the power of decimalDigit
+//     floatNum = floatNum / (10 ** decimalDigit);
+//
+//     return floatNum;
+// }
+//
+// roundFloat(3.1415,3)
 
-    return floatNum;
+
+function createPhoneNumber(numbers){
+
+    let phoneNumber = numbers.join("");
+
+    let areaCode = phoneNumber.slice(0,3);
+    let exchangeCode = phoneNumber.slice(3,6);
+    let subscriberNumber = phoneNumber.slice(6);
+
+    return `(${areaCode}) ${exchangeCode}-${subscriberNumber}`;
 }
 
-roundFloat(3.1415,3)
+createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]);
