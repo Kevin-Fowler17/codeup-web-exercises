@@ -83,20 +83,24 @@ li.nav-item {
     float: right;
     line-height: 80px;
 }
-.profile-details, .timeline, .who-to-follow {
-    float: left;
-    margin-right: calc (100% - .5em);
-    margin-left: calc (100% - .5em);
-}
-.profile-details, .who-to-follow{
+.profile-details {
     width: 25%;
 }
 .timeline {
     width: 50%;
 }
+.who-to-follow{
+    width: 25%;
+}
+.profile-details, .timeline, .who-to-follow {
+    float: left;
+    margin-left: calc (25% - .5em);
+    margin-right: calc (25% - .5em);
+}
 .container {
     padding-top: 2em;
 }
+/*
 .media {
     width: 100%;
     background-color: var(--light-bg);
@@ -114,3 +118,5 @@ li.nav-item {
     width: 100%;
     float: left;
 }
+
+ */
