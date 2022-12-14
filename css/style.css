@@ -15,13 +15,15 @@ h1, h2, h3, h4, h5, h6 {
 /* html {background-color: pink} */
 
 body {
-    font-family: "American Typewriter", sans-serif;
+    font-family: 'Rubik 80s Fade', cursive;
+    /*font-family: "American Typewriter", sans-serif;*/
     background: cornflowerblue url("../img/kitten.jpg") no-repeat center;
 /*  background-color: cornflowerblue;
     background-image: url("../img/kitten.jpg");
     background-repeat: no-repeat;
     background-position: center;
 */
+    background-blend-mode: difference;
     background-size: 400px;
 }
 
@@ -29,10 +31,14 @@ ul {
     list-style-type: upper-roman;
 }
 
+table {
+    font-size: 40px;
+    padding-left: 100px;
+}
+
 tr {
     font-size: 40px;
     padding-left: 100px;
-
 }
 
 td {
