@@ -2,11 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>testing file</title>
+    <title>Flexbox Basics Examples</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: Helvetica;
+            font-weight: bold;
+        }
+        .flex-container {
+            display: flex;
+            align-items: baseline;
+            border: 5px solid goldenrod;
+            height: 100vh;
+        }
+        .flex-item {
+            background: #BFD45D;
+            border: 2px solid #F9EFD6;
+            padding: 1em;
+        }
+    </style>
 </head>
 <body>
 
-    <script src="js/Test.js"
+<div class="flex-container">
+    <div class="flex-item">Item 1</div>
+    <div class="flex-item">Item 2</div>
+    <div class="flex-item">Item 3</div>
+</div>
 
 </body>
 </html>

@@ -86,14 +86,17 @@ li.nav-item {
 .profile-details {
     float: left;
     width: calc(25% - 1em);
+    margin: 0 .5em;
 }
 .timeline {
     float: left;
     width: calc(50% - 1em);
+    margin: 0 .5em;
 }
 .who-to-follow{
     float: left;
     width: calc(25% - 1em);
+    margin: 0 .5em;
 }
 .container {
     padding-top: 2em;
@@ -114,4 +117,11 @@ li.nav-item {
 .media-body {
     width: calc(100% - 50%);
     float: left;
+}
+.profile-items {
+    list-style-type: none;
+    padding: 0;
+}
+.profile-entry {
+    margin: .5em;
 }
