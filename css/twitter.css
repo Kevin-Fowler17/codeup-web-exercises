@@ -107,15 +107,15 @@ li.nav-item {
     border-bottom: 1px;
     border-color: var(--separator-color);
     padding: .5em;
-    overflow: auto;
+    overflow: scroll;
 }
 .media-image {
-    max-width: 50%;
+    max-width: 50px;
     margin-top: 1.33em;
     float: left;
 }
 .media-body {
-    width: calc(100% - 50%);
+    width: calc(100% - 50px);
     float: left;
 }
 .profile-items {
