@@ -11,7 +11,7 @@ h1 {text-align: center;}
 
 h2, h3 {
     padding: 0;
-    margin: 0;
+    margin: .5em 0;
 }
 
 .container {
@@ -74,14 +74,17 @@ section:nth-of-type(1) div:last-child {
     width: 100%;
     background: blue;
     height: 10em;
+    margin: 1em 0;
 }
 
 section:nth-of-type(3) {
     /* enter needed declarations here */
+    justify-content: flex-end;
 }
 
 section:nth-of-type(3) h3 {
     /* enter needed declarations here */
+    flex-grow: 1;
 
 }
 
@@ -98,14 +101,16 @@ section:nth-of-type(3) h3 {
     width: 5em;
     background: brown;
     /* enter needed declarations here */
+    flex-grow: 1;
 }
 
 .large-brown-box:nth-of-type(2) {
-    margin: 0 1em;
+    margin: 1em 1em;
 }
 
 section:nth-of-type(5) {
     /* enter needed declarations here */
+    justify-content: space-evenly;
 }
 
 .yellow-box {
@@ -118,6 +123,11 @@ section:nth-of-type(6) {
     background: coral;
     height: 14em;
     /* enter needed declarations here */
+    margin-top: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-grow: 0;
 }
 
 .grey-box {
