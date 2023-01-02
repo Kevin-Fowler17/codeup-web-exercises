@@ -21,10 +21,7 @@ a {
     margin: 0 auto;
     /* TODO: Make this a flex container and align it's items to the center*/
     display: flex;
-    flex-direction: row;
-    justify-content: center;
     align-items: center;
-    flex-shrink: 1;
 }
 
 .card {
