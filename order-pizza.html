@@ -35,17 +35,229 @@
                 </form>
 
                 <span class="navbar-text float-end ms-auto">
-                    <i class="fa-solid fa-user"></i> Sign up!
+                    <button type="button" class="btn btn-light">
+                        <i class="fa-solid fa-user"></i> Sign up!
+                    </button>
                 </span>
             </div>
         </div>
     </nav>
 
-    <div class="jumbotron jumbotron-fluid d-flex align-items-center">
+    <div class="jumbotron d-none d-md-flex align-items-center">
         <div class="jumbotron-class fs-2 mb-2 bg-light text-dark bg-success p-2" style="--bs-bg-opacity: .5;">
             <span>Welcome to Pizza World!</span>
         </div>
     </div>
+
+    <h2>Build your own pizza!</h2>
+
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab1" href="#"><span class="badge rounded-pill bg-secondary">1</span> Size and Crust</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="tab" data-bs-target="#tab2"><span class="badge rounded-pill bg-secondary">2</span> Cheese and Sauce</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="tab" data-bs-target="#tab3"><span class="badge rounded-pill bg-secondary">3</span> Toppings</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContentA">
+
+        <div class="tab-pane fade show active" id="tab1" >
+            <div class="card w-100">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item p-2 mb-2 bg-primary text-white">Choose size and crust</li>
+                    <li class="list-group-item">
+                        <ul class="list-group">
+                            <li class="list-group-item bg-secondary" style="--bs-bg-opacity: .25;">
+                                Hand Tossed
+                            </li>
+                            <li class="list-group-item">
+                                Garlic seasoned crust with a rich buttery taste.
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Small (10")
+                                </label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    Medium (12")
+                                </label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+
+                        <ul class="list-group">
+                            <li class="list-group-item bg-secondary" style="--bs-bg-opacity: .25;">
+                                Crispy Thin
+                            </li>
+                            <li class="list-group-item">
+                                Thin enough for optimum crispy to crunchy ratio.
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                                <label class="form-check-label" for="flexRadioDefault3">
+                                    Medium (12")
+                                </label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+                                <label class="form-check-label" for="flexRadioDefault4">
+                                    Large (14")
+                                </label>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="p-2 bg-secondary"  style="--bs-bg-opacity: .25;">
+                    <div class="d-flex justify-content-end"><a href="#" class="btn btn-primary w-auto">Next step ></a></div>
+                </div>
+                </div>
+        </div>
+
+        <div class="tab-pane fade" id="tab2">
+            <div class="card w-100">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item p-2 mb-2 bg-primary text-white">Choose Cheese and Sauce</li>
+                    <li class="list-group-item">
+                        <ul class="list-group">
+                            <li class="list-group-item bg-secondary" style="--bs-bg-opacity: .25;">
+                                Cheese
+                            </li>
+                            <li class="list-group-item">
+                                How much?
+                            </li>
+                            <li class="list-group-item">
+                                <select class="form-select">
+                                    <option value="1">Light</option>
+                                    <option selected value="2">Normal</option>
+                                    <option value="3">Extra</option>
+                                    <option value="3">Double</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+
+                        <ul class="list-group">
+                            <li class="list-group-item bg-secondary" style="--bs-bg-opacity: .25;">
+                                Sauce
+                            </li>
+                            <li class="list-group-item">
+                                What type?
+                            </li>
+                            <li class="list-group-item">
+                                <select class="form-select">
+                                    <option value="1">Tomato</option>
+                                    <option selected value="2">Marinara</option>
+                                    <option value="3">BBQ</option>
+                                    <option value="3">Alfredo</option>
+                                </select>
+                            </li>
+                            <li class="list-group-item">
+                                How much?
+                            </li>
+                            <li class="list-group-item">
+                                <select class="form-select">
+                                    <option value="1">Light</option>
+                                    <option selected value="2">Normal</option>
+                                    <option value="3">Extra</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="p-2 bg-secondary"  style="--bs-bg-opacity: .25;">
+                    <div class="d-flex justify-content-end">
+                        <a href="#" class="btn btn-primary w-auto ">< Previous</a>
+                        <a href="#" class="btn btn-primary w-auto ">Next ></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="tab3">
+            <div class="card w-100">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item p-2 mb-2 bg-primary text-white">Choose Toppings</li>
+                    <li class="list-group-item">
+                        <ul class="list-group">
+                            <li class="list-group-item bg-secondary" style="--bs-bg-opacity: .25;">
+                                Choose Meats
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
+                                <label class="form-check-label" for="flexCheckDefault1">
+                                    Beef
+                                </label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
+                                <label class="form-check-label" for="flexCheckDefault2">
+                                    Ham
+                                </label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3">
+                                <label class="form-check-label" for="flexCheckDefault3">
+                                    Philly Steak
+                                </label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault4">
+                                <label class="form-check-label" for="flexCheckDefault4">
+                                    Bacon
+                                </label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        <ul class="list-group">
+                            <li class="list-group-item bg-secondary" style="--bs-bg-opacity: .25;">
+                                Choose Non-Meats
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault5">
+                                <label class="form-check-label" for="flexCheckDefault5">
+                                    Green Peppers
+                                </label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault6">
+                                <label class="form-check-label" for="flexCheckDefault6">
+                                    Mushrooms
+                                </label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault7">
+                                <label class="form-check-label" for="flexCheckDefault7">
+                                    Onions
+                                </label>
+                            </li>
+                            <li class="list-group-item">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault8">
+                                <label class="form-check-label" for="flexCheckDefault8">
+                                    Jalapeño Peppers
+                                </label>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="p-2 bg-secondary"  style="--bs-bg-opacity: .25;">
+                    <div class="d-flex justify-content-end">
+                        <a href="#" class="btn btn-primary w-auto ">Checkout <i class="fa-solid fa-basket-shopping"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
 
 </div>
 
