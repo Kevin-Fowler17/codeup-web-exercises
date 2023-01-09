@@ -1,0 +1,120 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--&lt;!&ndash;<button id="btnToClick">Click Me</button>&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<script>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    // "use strict";&ndash;&gt;-->
+<!--&lt;!&ndash;    // (function() {&ndash;&gt;-->
+<!--&lt;!&ndash;    //     var btnToClick = document.getElementById('btnToClick');&ndash;&gt;-->
+<!--&lt;!&ndash;    //&ndash;&gt;-->
+<!--&lt;!&ndash;    //     console.log(btnToClick); // prints <button id="btnToClick">Click Me</button>&ndash;&gt;-->
+<!--&lt;!&ndash;    // })();&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</script>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <h1>List One</h1>&ndash;&gt;-->
+<!--&lt;!&ndash;    <ul>&ndash;&gt;-->
+<!--&lt;!&ndash;        <li class="odd list-one-item">List 1, Item 1</li>&ndash;&gt;-->
+<!--&lt;!&ndash;        <li class="even list-one-item">List 1, Item 2</li>&ndash;&gt;-->
+<!--&lt;!&ndash;    </ul>&ndash;&gt;-->
+<!--&lt;!&ndash;    <h1>List Two</h1>&ndash;&gt;-->
+<!--&lt;!&ndash;    <ul>&ndash;&gt;-->
+<!--&lt;!&ndash;        <li class="odd list-two-item">List 2, Item 1</li>&ndash;&gt;-->
+<!--&lt;!&ndash;        <li class="even list-two-item">List 2, Item 2</li>&ndash;&gt;-->
+<!--&lt;!&ndash;    </ul>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <script>&ndash;&gt;-->
+<!--&lt;!&ndash;        "use strict";&ndash;&gt;-->
+<!--&lt;!&ndash;        (function() {&ndash;&gt;-->
+<!--&lt;!&ndash;        // Get all elements with class 'even'&ndash;&gt;-->
+<!--&lt;!&ndash;        var evenElements = document.getElementsByClassName('even');&ndash;&gt;-->
+
+<!--&lt;!&ndash;        // Print the first element&ndash;&gt;-->
+<!--&lt;!&ndash;        console.log(evenElements[0]); // Prints li.even.list-one-item&ndash;&gt;-->
+
+<!--&lt;!&ndash;        // Print all elements&ndash;&gt;-->
+<!--&lt;!&ndash;        for (var i = 0; i < evenElements.length; i++) {&ndash;&gt;-->
+<!--&lt;!&ndash;        console.log(evenElements[i]);&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;        // Prints:&ndash;&gt;-->
+<!--&lt;!&ndash;        // li.even.list-one-item&ndash;&gt;-->
+<!--&lt;!&ndash;        // li.even.list-two-item&ndash;&gt;-->
+
+<!--&lt;!&ndash;        var listItems = document.getElementsByTagName('li');&ndash;&gt;-->
+
+<!--&lt;!&ndash;        // Print the first list item&ndash;&gt;-->
+<!--&lt;!&ndash;        console.log(listItems[0]); // Prints li.odd.list-one-item&ndash;&gt;-->
+
+<!--&lt;!&ndash;        // Print all the list items&ndash;&gt;-->
+<!--&lt;!&ndash;        for (var i = 0; i < listItems.length; i++) {&ndash;&gt;-->
+<!--&lt;!&ndash;        console.log(listItems[i]);&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;        // Prints&ndash;&gt;-->
+<!--&lt;!&ndash;        // li.odd.list-one-item&ndash;&gt;-->
+<!--&lt;!&ndash;        // li.even.list-one-item&ndash;&gt;-->
+<!--&lt;!&ndash;        // li.odd.list-two-item&ndash;&gt;-->
+<!--&lt;!&ndash;        // li.even.list-two-item&ndash;&gt;-->
+<!--&lt;!&ndash;    })();&ndash;&gt;-->
+
+<!--&lt;!&ndash;</script>&ndash;&gt;-->
+
+<!--<h1 id="main-heading">Hello World!</h1>-->
+<!--<div id="main-section">-->
+<!--    <p>Paragraph 1</p>-->
+<!--    <p>Paragraph 2</p>-->
+<!--</div>-->
+<!--<script>-->
+<!--    "use strict";-->
+<!--    (function() {-->
+<!--        // Get the main heading h1 by id-->
+<!--        var mainHeading = document.getElementById('main-heading');-->
+
+<!--        console.log(mainHeading.innerHTML); // Prints Hello World!-->
+
+<!--        // Assign a new value to the inner HTML of the main heading-->
+<!--        mainHeading.innerHTML = "Hello Codeup!";-->
+
+<!--        console.log(mainHeading.innerHTML); // Prints Hello Codeup!-->
+
+<!--        // Get the main section div by id-->
+<!--        var mainSection = document.getElementById('main-section');-->
+
+<!--        console.log(mainSection.innerHTML);-->
+<!--        // Prints-->
+<!--        // <p>Paragraph 1</p>-->
+<!--        // <p>Paragraph 2</p>-->
+<!--    })();-->
+<!--</script>-->
+
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sample Page</title>
+</head>
+<body>
+<script>
+    "use strict";
+    (function() {
+        // Get the body element (notice we need to use index 0 of the array!)
+        var bodyElement = document.getElementsByTagName('body')[0];
+
+        // Change the body font color
+        bodyElement.style.color = '#444'; // Dark grey
+
+        bodyElement.style['background-color'] = "#fefefe"; // Very light grey
+        // We had to use [] syntax since the property name has a dash
+
+        bodyElement.style.fontFamily = "Helvetica, Verdana, Sans-Serif";
+        // Replace dashes with camelCase to use standard . syntax
+    })();
+</script>
+</body>
+</html>
