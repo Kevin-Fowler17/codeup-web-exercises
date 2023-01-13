@@ -132,13 +132,8 @@
 
 function createPhoneNumber(numbers){
 
-    let phoneNumber = numbers.join("");
+    let arrSort = [arr.sort()]
 
-    let areaCode = phoneNumber.slice(0,3);
-    let exchangeCode = phoneNumber.slice(3,6);
-    let subscriberNumber = phoneNumber.slice(6);
-
-    return `(${areaCode}) ${exchangeCode}-${subscriberNumber}`;
+    return arrSort;
 }
 
-createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]);
