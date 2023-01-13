@@ -66,34 +66,63 @@
 
 
     // select an element by id and log
+    const myH1 = $("#my-h1");
+    // const myH1 = document.querySelector("my-h1");
+    // $("#my-h1")
+    console.log(myH1);
 
     // select elements by class and log
+    const myBoxes = $(".my-box");
+    console.log(myBoxes);
+    // console.log($(".my-box"));
 
     // select elements by tag and log
+    console.log($("p"));
 
     // select child lis in a ul and log
-
+    console.log($("#my-ul > li"));
 
     // difference between what querySelector returns and what jquery returns
+    console.log(document.querySelector("#my-h1"))
 
     // need ref for explanation of a jquery object
     // https://howtodoinjava.com/jquery/javascript-dom-objects-vs-jquery-objects/
 
     // try to output innerText and innerHTML with jquery object
+    // $("#my-h1")[0].innerText = "Blah blah";
+    $("#my-h1").html("<i>Blah blah blah</i>");
 
     // how to read and write innerHTML for jquery objects
 
+
     // explain the method chaining above
 
+
     // change the background color of all elements with a my-box class
+    // const myBoxes2 = document.querySelectorAll(".my-box");
+    // myBoxes2.forEach(function (myBox) {
+    //   myBox.style.backgroundColor = "red";
+    // })
+
+    $(".my-box").css("background-color", "red");
+    $("#my-h1").css("background-color", "red");
 
     // do the vanilla js equivalent :)
 
+
     // change font size of all p els to 28px
+    $("p").css("font-size", "28px")
+    // $("p").css({
+    //   "font-size": "28px"
+    //   "font-family": "san-serif"
+    // })
+
 
     // change font family of p els, my-box classes, and my-h1 id to sans-serif
+    $("p, .my-box, #my-h1").css("font-family", "sans-serif");
 
     // add a 5px dotted red border to all els
+    $("*").css("border", "5px dotted red");
 
 
   })();

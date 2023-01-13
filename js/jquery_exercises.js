@@ -1,15 +1,32 @@
 "use strict";
 
-$(function () {
+// alert($("#my-p1a"));
 
-    console.log(jQuery.fn.jquery);
+// $(".codeup").css("border", "1px solid red");
 
-    console.log($.fn.jquery);
+$("li").css("font-size", "20px");
 
-});
+$("h1, p, li").css("background-color", "yellow");
 
-$(function() {
+let contents = $('h1').html();
+alert(contents);
 
-    alert( 'The DOM has finished loading!' );
+$("*").css("background-color", "yellow");
 
-});
+// (function () {
+//
+//     console.log(jQuery.fn.jquery);
+//
+//     console.log($.fn.jquery);
+//
+// })();
+//
+// $(function() {
+//
+//     alert( 'The DOM has finished loading!' );
+//
+// });
+//
+// $(document).ready(function (){
+//     alert( 'The DOM has finished loading! Part deux' )
+// });
