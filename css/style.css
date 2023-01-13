@@ -1,67 +1,33 @@
-.fancy-header {
-    color: purple;
+* {
+    font-family:  serif;
+    color: #EADDCA;
 }
 
-header {
-    text-align: center;
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    color: #EADDCA;
 }
-
-h1, h2, h3, h4, h5, h6 {
-    color: purple;
-    text-decoration: underline;
-}
-
-/* * {background-color: pink} */
-/* html {background-color: pink} */
 
 body {
-    font-family: 'Rubik 80s Fade', cursive;
-    /*font-family: "American Typewriter", sans-serif;*/
-    background: cornflowerblue url("../img/kitten.jpg") no-repeat center;
-/*  background-color: cornflowerblue;
-    background-image: url("../img/kitten.jpg");
+    background-image: url("../img/coffee-4912804_960_720.jpg");
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
-*/
-    background-blend-mode: difference;
-    background-size: 400px;
+    background-attachment: fixed;
+    color: #EADDCA;
 }
 
-ul {
-    list-style-type: upper-roman;
+.form-labels {
+    font-weight: bold;
 }
 
 table {
-    font-size: 40px;
-    padding-left: 100px;
+    border-collapse: collapse;
+    margin: 15px 0;
 }
 
-tr {
-    font-size: 40px;
-    padding-left: 100px;
-}
-
-td {
-    font-size: 25px;
-    padding-left: 50px;
-}
-
-/* unvisited link (:link) */
-a:link {
-    color:red;
-}
-
-/* visited link (:visited) */
-a:visited {
-    color:black;
-}
-
-/* mouse hover over link (:hover) */
-a:hover {
-    color:blue;
-}
-
-/* active/selected link (:active) */
-a:active {
-    color:green;
+td, th {
+    border: 1px solid black;
+    padding: 5px 10px;
 }
