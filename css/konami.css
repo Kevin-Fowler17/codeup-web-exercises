@@ -1,0 +1,26 @@
+#my-h1-1 {
+    display: inline; /* the default for span */
+    color: black;
+    margin: 1em;
+    float: left;
+}
+
+#my-h1-2 {
+    display: inline-block;
+    color: white;
+    margin: 1em;
+    float: right;
+}
+
+#my-h1-3 {
+    color: white;
+    margin: 1em;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    float: left;
+    left: 15%;
+    list-style:none;
+ }

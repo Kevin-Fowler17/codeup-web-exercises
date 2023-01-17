@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Keyboard Events</title>
+</head>
+<body>
+
+<p>Please type something into this form:</p>
+<form>
+  <input type="text" id="textfield" name="textfield" placeholder="Type Here"/>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossOrigin="anonymous"></script>
+<script>
+    $('#textfield').keydown(function(event) {
+        // console.log(event.keyCode);
+        // console.log(event.key);
+        // event.preventDefault();
+        console.log(`A key was pushed down: ${event.key}`);
+    });
+    $('#textfield').keyup(function() {
+        console.log('A key was released!');
+    });
+    // $('#textfield').keypress(function() {
+    //     console.log('A keypress was pushed!');
+    // });
+    $('body').keydown(function(event) {
+        console.log(`A key was pushed down: ${event.key}`);
+    });
+    $('#textfield').on("keypress", function(){
+        console.log('A keypress was pushed!');
+    });
+    $('#textfield').off("keypress");
+
+
+</script>
+
+</body>
+</html>
