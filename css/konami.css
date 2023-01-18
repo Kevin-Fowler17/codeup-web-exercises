@@ -1,20 +1,24 @@
+* {
+    font-family: 'Metal Mania', cursive;
+}
+
 #my-h1-1 {
     display: inline; /* the default for span */
-    color: black;
+    color: #7E3517;
     margin: 1em;
     float: left;
 }
 
 #my-h1-2 {
     display: inline-block;
-    color: white;
+    color: #E5BC55;
     margin: 1em;
     float: right;
 }
 
 #my-h1-3 {
-    color: white;
-    margin: 1em;
+    color: #AA4524;
+    margin-bottom: .5em;
 }
 
 #footer {
