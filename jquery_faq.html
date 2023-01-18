@@ -93,20 +93,19 @@
         $(document).ready(function() {
 
             $("#add-class-btn").click(function () {
-                $("dd").addClass("hidden");
+                $("dd").addClass("invisible");
             });
 
             $("#remove-class-btn").click(function () {
-                $(".invisible").removeClass("hidden");
+                $(".invisible").removeClass("invisible");
             });
 
             $("#toggle-class-btn").click(function () {
-                $(".invisible").toggleClass("hidden");
+                $("dd").toggleClass("invisible");
             });
 
-            $('dt').click(function(event) {
-                event.preventDefault();
-                $('dt').toggleClass('highlight');
+            $('dt').click(function() {
+                $(this).toggleClass('highlight');
             });
 
         });
