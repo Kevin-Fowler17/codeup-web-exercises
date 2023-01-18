@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Anton&display=swap');
+
+*{
+    background-color: #F0F0F0;
+    font-family: 'Abel', sans-serif;
+}
+
+#logo {
+    width: 60px;
+}
+
+h1, h2, h3{
+    font-family: 'Anton', sans-serif;
+}
+.dot-big {
+    height: 100px;
+    width: 100px;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    display: inline-block;
+    font-family: 'Anton', sans-serif;
+}
+.dot-small {
+    height: 25px;
+    width: 25px;
+}
+.design-dot{
+    background-color: #e6563b;
+}
+
+.develop-dot{
+    background-color: #eb9d3a;
+}
+
+.support-dot{
+    background-color: #7cb06c;
+}
+
+.host-dot{
+    background-color: #00aba9;
+}
+.bg-custom-shade{
+    background-color: #e6e6e6;
+}
+
