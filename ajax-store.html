@@ -41,23 +41,23 @@
                 .done(function (data) {
 
                     console.log(data);
-
+                    $("#insertProducts").children().remove()
                     data.forEach(function (tool) {
                         $("#insertProducts").append(`
-                    <tr>
-                        <td>${tool.title}</td>
-                        <td>${tool.quantity}</td>
-                        <td>$${tool.price}</td>
-                        <td>${tool.categories.join(", ")}</td>
-                    </tr>
-                `);
+                            <tr>
+                                <td>${tool.title}</td>
+                                <td>${tool.quantity}</td>
+                                <td>$${tool.price}</td>
+                                <td>${tool.categories.join(", ")}</td>
+                            </tr>
+                        `);
                     });
                 });
         }
 
         updateInventory();
 
-        $("button").on('click', () => updateInventory(data.remove()));
+        $("button").on('click', () => updateInventory());
 
     })();
 </script>
