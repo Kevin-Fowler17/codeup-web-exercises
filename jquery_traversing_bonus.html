@@ -42,51 +42,136 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 <script>
 
-    let leftButtonA = "";
-    let leftButtonB = "";
+//    let leftButtonA = "";
+//    let leftButtonB = "";
+//
+//    let centerButtonA = "";
+//    let centerButtonB = "";
+//
+//    let rightButtonA = "";
+//    let rightButtonB = "";
+//
+//    $("#left-btn").click(function () {
+//        leftButtonA = $("#image1").attr("src");
+//        leftButtonB = $("#image2").attr("src");
+//
+//        $("#image1").attr("src", leftButtonB);
+//        $("#image2").attr("src", leftButtonA);
+//    });
+//
+//    $("#center-btn").click(function () {
+//        function randomIntFromInterval(min, max) { // min and max included
+//            return Math.floor(Math.random() * (max - min + 1) + min)
+//        }
+//        const rndInt = randomIntFromInterval(1, 2)
+//
+//        if (rndInt === 1) {
+//            centerButtonA = $("#image1").attr("src");
+//            centerButtonB = $("#image2").attr("src");
+//
+//            $("#image1").attr("src", centerButtonB);
+//            $("#image2").attr("src", centerButtonA);
+//        } else {
+//            centerButtonA = $("#image2").attr("src");
+//            centerButtonB = $("#image3").attr("src");
+//
+//            $("#image2").attr("src", centerButtonB);
+//            $("#image3").attr("src", centerButtonA);
+//        };
+//
+//    });
+//
+//    $("#right-btn").click(function () {
+//        rightButtonA = $("#image3").attr("src");
+//        rightButtonB = $("#image2").attr("src");
+//
+//        $("#image3").attr("src", rightButtonB);
+//        $("#image2").attr("src", rightButtonA);
+//    });
 
-    let centerButtonA = "";
-    let centerButtonB = "";
 
-    let rightButtonA = "";
-    let rightButtonB = "";
 
-    $("#left-btn").click(function () {
-        leftButtonA = $("#image1").attr("src");
-        leftButtonB = $("#image2").attr("src");
 
-        $("#image1").attr("src", leftButtonB);
-        $("#image2").attr("src", leftButtonA);
-    });
+   // let sourceA = "";
+   // let sourceB = "";
+   //
+   //  $("#left-btn").click(function () {
+   //      sourceA = $("#image1").attr("src");
+   //      sourceB = $("#image2").attr("src");
+   //
+   //      $("#image1").attr("src", sourceB);
+   //      $("#image2").attr("src", sourceA);
+   //  });
+   //
+   //  $("#center-btn").click(function () {
+   //     function randomIntFromInterval(min, max) { // min and max included
+   //         return Math.floor(Math.random() * (max - min + 1) + min)
+   //     }
+   //     const rndInt = randomIntFromInterval(1, 2)
+   //
+   //     if (rndInt === 1) {
+   //         sourceA = $("#image1").attr("src");
+   //         sourceB = $("#image2").attr("src");
+   //
+   //         $("#image1").attr("src", sourceB);
+   //         $("#image2").attr("src", sourceA);
+   //     } else {
+   //         sourceA = $("#image3").attr("src");
+   //         sourceB = $("#image2").attr("src");
+   //
+   //         $("#image3").attr("src", sourceB);
+   //         $("#image2").attr("src", sourceA);
+   //     };
+   //
+   //  });
+   //
+   //  $("#right-btn").click(function () {
+   //      sourceA = $("#image3").attr("src");
+   //      sourceB = $("#image2").attr("src");
+   //
+   //      $("#image3").attr("src", sourceB);
+   //      $("#image2").attr("src", sourceA);
+   //  });
 
-    $("#center-btn").click(function () {
-        function randomIntFromInterval(min, max) { // min and max included
-            return Math.floor(Math.random() * (max - min + 1) + min)
-        }
+
+    function randomIntFromInterval(min, max) { // min and max included
+        return Math.floor(Math.random() * (max - min + 1) + min)
+    }
+
+    let sourceA = "";
+    let sourceB = "";
+
+    function leftSwap() {
+         sourceA = $("#image1").attr("src");
+         sourceB = $("#image2").attr("src");
+
+         $("#image1").attr("src", sourceB);
+         $("#image2").attr("src", sourceA);
+    }
+
+    function rightSwap() {
+         sourceA = $("#image3").attr("src");
+         sourceB = $("#image2").attr("src");
+
+         $("#image3").attr("src", sourceB);
+         $("#image2").attr("src", sourceA);
+    }
+
+     $("#left-btn").click(function() {
+         leftSwap()
+     });
+
+    $("#center-btn").click(function() {
         const rndInt = randomIntFromInterval(1, 2)
-
         if (rndInt === 1) {
-            centerButtonA = $("#image1").attr("src");
-            centerButtonB = $("#image2").attr("src");
-
-            $("#image1").attr("src", centerButtonB);
-            $("#image2").attr("src", centerButtonA);
+            leftSwap()
         } else {
-            centerButtonA = $("#image2").attr("src");
-            centerButtonB = $("#image3").attr("src");
-
-            $("#image2").attr("src", centerButtonB);
-            $("#image3").attr("src", centerButtonA);
-        };
-
+            rightSwap()
+        }
     });
 
-    $("#right-btn").click(function () {
-        rightButtonA = $("#image3").attr("src");
-        rightButtonB = $("#image2").attr("src");
-
-        $("#image3").attr("src", rightButtonB);
-        $("#image2").attr("src", rightButtonA);
+    $("#right-btn").click(function() {
+        rightSwap()
     });
 
 </script>
