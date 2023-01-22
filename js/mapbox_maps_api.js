@@ -39,12 +39,13 @@ function updateMap () {
 
     restaurants.forEach(function (restaurant) {
 
-    let marker = new mapboxgl.Marker()
-    .setLngLat([restaurant.longitude, restaurant.latitude])
-    .addTo(map);
-    let restaurantPopup = new mapboxgl.Popup()
-    .setHTML(`<h2>${restaurant.name}</h2><p style="color: blue">${restaurant.description}</p><P style="color: red">${restaurant.review}</P>`)
-    marker.setPopup(restaurantPopup)
+        let marker = new mapboxgl.Marker()
+        .setLngLat([restaurant.longitude, restaurant.latitude])
+        .addTo(map);
+
+        let restaurantPopup = new mapboxgl.Popup()
+        .setHTML(`<h2>${restaurant.name}</h2><p style="color: blue">${restaurant.description}</p><P style="color: red">${restaurant.review}</P>`)
+        marker.setPopup(restaurantPopup)
 
     })
 }
@@ -52,3 +53,38 @@ function updateMap () {
 updateMap();
 
 
+function removeMapMarkers () {
+    restaurants = []
+}
+
+let removeButton = document.querySelector('#removeMapMarkersButton');
+removeButton.addEventListener('click', removeMapMarkers);
+removeButton.addEventListener('click', updateMap);
+
+
+function addAddressToMap () {
+    console.log(addAddressSelection.value)
+    geocode(addAddressSelection.value, MAPBOX_API_KEY).then(function(results) {
+
+        console.log(results)
+
+        mapboxgl.accessToken = MAPBOX_API_KEY;
+        const map = new mapboxgl.Map({
+            container: 'my-map',
+            style: 'mapbox://styles/mapbox/satellite-streets-v12',
+            zoom: 20,
+            center: [results[0], results[1]]
+        });
+
+        let marker = new mapboxgl.Marker()
+            .setLngLat([results[0], results[1]])
+            .addTo(map);
+
+    })
+}
+
+const addAddressSelection = document.querySelector('#addAddress')
+let submitAddress = document.getElementById("submitAddress");
+
+submitAddress.addEventListener('click', addAddressToMap);
+submitAddress.addEventListener('click', updateMap);
