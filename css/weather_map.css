@@ -2,18 +2,8 @@
     font-family: 'Merriweather Sans', sans-serif;
 }
 
-.forecast_border {
-    border: .5px solid #3B94D9;
-}
-
-nav {
-    background-color: #ffa630;
-    color: white;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 3px;
+#my-title {
+    margin-left: 1em;
 }
 
 #submitAddress {
@@ -21,12 +11,10 @@ nav {
     border-color: white;
 }
 
-#my-title {
-    display: inline; /* the default for span */
-}
-
 #currentCity {
-    display: inline-block;
+    color: white;
+    margin-left: 1em;
+    margin-right: 1em;
 }
 
 body {
@@ -39,6 +27,11 @@ body {
     padding-right: 0;
     padding-left: 0;
 }
+
+.forecast_border {
+    border: .5px solid #3B94D9;
+}
+
 ul {
     list-style-type: none;
     margin: 0;

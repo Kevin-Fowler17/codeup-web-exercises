@@ -16,20 +16,41 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-<nav class="container-fluid ">
-    <div class="container-fluid d-flex justify-content-between align-content-center">
-
-        <div class="row align-items-center"><p id="my-title" class="">Weather App</p></div>
-
-        <div id="my-search" class="input-group input-group-sm w-50">
-            <input id="addAddress" type="text" class="form-control" placeholder="Place">
-            <button id="submitAddress" class="btn btn-outline-secondary" type="button">Find</button>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #e3f2fd;"
+    <div class="container-fluid d-flex justify-content-between">
+        <a id="my-title" class="navbar-brand" href="#">Weather App</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <form class="d-flex float-center ms-auto">
+                <input id="addAddress" type="text" class="form-control" placeholder="Place">
+                <button id="submitAddress" class="btn btn-outline-secondary" type="button">Find</button>
+            </form>
+            <div class="d-flex float-right ms-auto">
+                <ul class="mr-3">
+                    <li id="currentCity"></li>
+                </ul>
+            </div>
         </div>
-
-        <p id="currentCity"></p>
-
     </div>
 </nav>
+
+
+<!--<nav class="container-fluid ">-->
+<!--    <div class="container-fluid d-flex justify-content-between align-content-center">-->
+
+<!--        <div class="row align-items-center"><p id="my-title" class="">Weather App</p></div>-->
+
+<!--        <div id="my-search" class="input-group input-group-sm w-50">-->
+<!--            <input id="addAddress" type="text" class="form-control" placeholder="Place">-->
+<!--            <button id="submitAddress" class="btn btn-outline-secondary" type="button">Find</button>-->
+<!--        </div>-->
+
+<!--        <p id="currentCity"></p>-->
+
+<!--    </div>-->
+<!--</nav>-->
 
 <div class="forecast_border contain-fluider">
     <div class="row">

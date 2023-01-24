@@ -122,7 +122,7 @@ function renderWeather(data, increment) {
 
     let html = '<div class="test mx-auto card-header">' + formattedDate.toDateString() + '</div>';
     html += '<ul class="list-group list-group-flush">';
-    html += '<li class="list-group-item"><img src="http://openweathermap.org/img/wn/' + data.list[increment].weather[0].icon + '@2x.png"/></li>';
+    html += '<li class="list-group-item"><img src="http://openweathermap.org/img/wn/' + data.list[increment].weather[0].icon + '@2x.png" style="width: 50px;"/></li>';
     html += '<li class="list-group-item">' + Math.round(data.list[increment].main.temp) + String.fromCharCode(176) + 'F ' + data.list[0].weather[0].main + '</li>';
     html += '<li class="list-group-item">H: ' + Math.round(data.list[increment].main.temp_max) + String.fromCharCode(176) + 'F / L:' + Math.round(data.list[0].main.temp_min) + String.fromCharCode(176) + 'F</li><br>';
     html += '</ul>';
