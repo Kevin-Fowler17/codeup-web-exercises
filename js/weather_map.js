@@ -1,42 +1,68 @@
 "use strict"
-function startingWeatherAndMap () {
+loadWeatherAndMap();
 
-// weather
+function loadWeatherAndMap () {
+    callOpenWeather(29.63638, -98.40349);
+    callMapBox(29.63638, -98.40349, 18);
+}
+
+function updateSearchBoxWeatherAndLocation () {
+    geocode(addAddressSelection.value, MAPBOX_API_KEY).then(function(results) {
+        callOpenWeather(results[1], results[0]);
+        callMapBox(results[1], results[0], 18);
+    })
+}
+
+function updateDragWeatherAndLocation (lat, lon) {
+    console.log(lat)
+    console.log(lon)
+    // geocode(lngLat, MAPBOX_API_KEY).then(function(results) {
+        callOpenWeather(lat, lon);
+        callMapBox(lat, lon, 18);
+    // })
+}
+
+
+
+function callOpenWeather (lat, lon) {
     $.get("http://api.openweathermap.org/data/2.5/forecast", {
         APPID: OPENWEATHER_API_KEY,
-        lat:    29.63638,
-        lon:   -98.40349,
+        lat:    lat,
+        lon:   lon,
         units: "imperial"
     }).done(function(data) {
 
-    document.getElementById("currentCity").innerHTML = 'Current city: ' + data.city.name;
+        document.getElementById("currentCity").innerHTML = 'Current city: ' + data.city.name;
 
-    document.getElementById("tip1").innerHTML = renderWeatherTip(data, 0);
-    document.getElementById("tip2").innerHTML = renderWeatherTip(data, 8);
-    document.getElementById("tip3").innerHTML = renderWeatherTip(data,16);
-    document.getElementById("tip4").innerHTML = renderWeatherTip(data,24);
-    document.getElementById("tip5").innerHTML = renderWeatherTip(data,32);
+        document.getElementById("tip1").innerHTML = renderWeatherTip(data, 0);
+        document.getElementById("tip2").innerHTML = renderWeatherTip(data, 8);
+        document.getElementById("tip3").innerHTML = renderWeatherTip(data,16);
+        document.getElementById("tip4").innerHTML = renderWeatherTip(data,24);
+        document.getElementById("tip5").innerHTML = renderWeatherTip(data,32);
 
-    document.getElementById("card1").innerHTML = renderWeather(data, 0);
-    document.getElementById("card2").innerHTML = renderWeather(data, 8);
-    document.getElementById("card3").innerHTML = renderWeather(data,16);
-    document.getElementById("card4").innerHTML = renderWeather(data,24);
-    document.getElementById("card5").innerHTML = renderWeather(data,32);
+        document.getElementById("card1").innerHTML = renderWeather(data, 0);
+        document.getElementById("card2").innerHTML = renderWeather(data, 8);
+        document.getElementById("card3").innerHTML = renderWeather(data,16);
+        document.getElementById("card4").innerHTML = renderWeather(data,24);
+        document.getElementById("card5").innerHTML = renderWeather(data,32);
     });
+};
 
-//mapbox
+
+
+function callMapBox (lat, lon, zoom) {
     mapboxgl.accessToken = MAPBOX_API_KEY;
     const map = new mapboxgl.Map({
         container: 'my-map',
         style: 'mapbox://styles/mapbox/satellite-streets-v12',
-        zoom: 18,
-        center: [-98.40349, 29.63638]
+        zoom: zoom,
+        center: [lon, lat]
     });
 
     let marker = new mapboxgl.Marker({
         draggable: true
     })
-        .setLngLat([-98.40349, 29.63638])
+        .setLngLat([lon, lat])
         .addTo(map);
 
     function onDragEnd() {
@@ -48,72 +74,17 @@ function startingWeatherAndMap () {
             center: lngLat
         })
 
-        updateZoomAndWeather(lngLat);
+        // console.log(lngLat)
+        updateDragWeatherAndLocation(lngLat.lat, lngLat.lng);
     }
 
     marker.on('dragend', onDragEnd)
 
-    setPopup(marker, -98.40349, 29.63638)
+    setPopup(marker, lon, lat)
+};
 
-}
 
-startingWeatherAndMap();
 
-function updateWeatherAndLocation () {
-    console.log(addAddressSelection.value)
-
-    geocode(addAddressSelection.value, MAPBOX_API_KEY).then(function(results) {
-
-        console.log(results)
-
-        $.get("http://api.openweathermap.org/data/2.5/forecast", {
-            APPID: OPENWEATHER_API_KEY,
-            lat:   results[1],
-            lon:   results[0],
-            units: "imperial"
-        }).done(function(data) {
-
-            document.getElementById("currentCity").innerHTML = 'Current city: ' + data.city.name;
-
-            document.getElementById("tip1").innerHTML = renderWeatherTip(data, 0);
-            document.getElementById("tip2").innerHTML = renderWeatherTip(data, 8);
-            document.getElementById("tip3").innerHTML = renderWeatherTip(data,16);
-            document.getElementById("tip4").innerHTML = renderWeatherTip(data,24);
-            document.getElementById("tip5").innerHTML = renderWeatherTip(data,32);
-
-            document.getElementById("card1").innerHTML = renderWeather(data, 0);
-            document.getElementById("card2").innerHTML = renderWeather(data, 8);
-            document.getElementById("card3").innerHTML = renderWeather(data,16);
-            document.getElementById("card4").innerHTML = renderWeather(data,24);
-            document.getElementById("card5").innerHTML = renderWeather(data,32);
-        });
-
-        mapboxgl.accessToken = MAPBOX_API_KEY;
-        const map = new mapboxgl.Map({
-            container: 'my-map',
-            style: 'mapbox://styles/mapbox/satellite-streets-v12',
-            zoom: 10,
-            center: [results[0], results[1]]
-        });
-
-        let marker = new mapboxgl.Marker({
-            draggable: true
-        })
-            .setLngLat([results[0], results[1]])
-            .addTo(map);
-
-        function onDragEnd() {
-            const lngLat = marker.getLngLat();
-            coordinates.style.display = 'block';
-            coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
-        }
-
-        marker.on('dragend', onDragEnd)
-
-        setPopup(marker, results[0], results[1])
-
-    })
-}
 
 function renderWeatherTip(data, increment) {
 
@@ -127,6 +98,8 @@ function renderWeatherTip(data, increment) {
 
     return html;
 }
+
+
 
 function renderWeather(data, increment) {
 
@@ -142,10 +115,12 @@ function renderWeather(data, increment) {
     return html;
 };
 
+
+
 function setPopup(marker, myLng, myLat) {
 
     reverseGeocode({lat: myLat, lng: myLng}, MAPBOX_API_KEY).then(function(results) {
-
+        console.log("setPopup: " + results)
         let popup = new mapboxgl.Popup()
             .setHTML(results)
         marker.setPopup(popup)
@@ -153,53 +128,11 @@ function setPopup(marker, myLng, myLat) {
     })
 };
 
-function updateZoomAndWeather(lnglat) {
 
-    reverseGeocode({lat: lnglat.lat, lng: lnglat.lng}, MAPBOX_API_KEY).then(function(results) {
 
-        console.log(results)
-        $.get("http://api.openweathermap.org/data/2.5/forecast", {
-            APPID: OPENWEATHER_API_KEY,
-            lat:   lnglat.lat,
-            lon:   lnglat.lng,
-            units: "imperial"
-        }).done(function(data) {
-
-            document.getElementById("currentCity").innerHTML = 'Current city: ' + data.city.name;
-
-            document.getElementById("tip1").innerHTML = renderWeatherTip(data, 0);
-            document.getElementById("tip2").innerHTML = renderWeatherTip(data, 8);
-            document.getElementById("tip3").innerHTML = renderWeatherTip(data,16);
-            document.getElementById("tip4").innerHTML = renderWeatherTip(data,24);
-            document.getElementById("tip5").innerHTML = renderWeatherTip(data,32);
-
-            document.getElementById("card1").innerHTML = renderWeather(data, 0);
-            document.getElementById("card2").innerHTML = renderWeather(data, 8);
-            document.getElementById("card3").innerHTML = renderWeather(data,16);
-            document.getElementById("card4").innerHTML = renderWeather(data,24);
-            document.getElementById("card5").innerHTML = renderWeather(data,32);
-        });
-
-        let marker = new mapboxgl.Marker({
-            draggable: true
-        })
-            .setLngLat([results[0], results[1]])
-            .addTo(map);
-
-        function onDragEnd() {
-            const lngLat = marker.getLngLat();
-            coordinates.style.display = 'block';
-            coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
-        }
-
-        marker.on('dragend', onDragEnd)
-
-        setPopup(marker, results[0], results[1])
-    })
-}
 
 const addAddressSelection = document.querySelector('#addAddress');
 let submitAddress = document.getElementById("submitAddress");
 
-submitAddress.addEventListener('click', updateWeatherAndLocation);
+submitAddress.addEventListener('click', updateSearchBoxWeatherAndLocation);
 
