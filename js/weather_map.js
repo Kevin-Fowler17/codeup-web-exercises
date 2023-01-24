@@ -2,8 +2,6 @@
 function startingWeatherAndMap () {
 
 // weather
-    const weatherData = '';
-
     $.get("http://api.openweathermap.org/data/2.5/forecast", {
         APPID: OPENWEATHER_API_KEY,
         lat:    29.63638,
@@ -41,9 +39,15 @@ function startingWeatherAndMap () {
         .setLngLat([-98.40349, 29.63638])
         .addTo(map);
 
-    let popup = new mapboxgl.Popup()
-        .setHTML(`<br>San Antonio, TX`)
-    marker.setPopup(popup)
+    function onDragEnd() {
+        const lngLat = marker.getLngLat();
+        coordinates.style.display = 'block';
+        coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
+    }
+
+    marker.on('dragend', onDragEnd)
+
+    setPopup(marker, -98.40349, 29.63638)
 
 }
 
@@ -54,7 +58,7 @@ function updateWeatherAndLocation () {
 
     geocode(addAddressSelection.value, MAPBOX_API_KEY).then(function(results) {
 
-        console.log(results)
+        // console.log(results)
 
         $.get("http://api.openweathermap.org/data/2.5/forecast", {
             APPID: OPENWEATHER_API_KEY,
@@ -62,7 +66,6 @@ function updateWeatherAndLocation () {
             lon:   results[0],
             units: "imperial"
         }).done(function(data) {
-            console.log(data);
 
             document.getElementById("currentCity").innerHTML = 'Curreny city: ' + data.city.name;
 
@@ -101,19 +104,17 @@ function updateWeatherAndLocation () {
 
         marker.on('dragend', onDragEnd)
 
-        let popup = new mapboxgl.Popup()
-            .setHTML(`<br>${addAddressSelection.value}`)
-        marker.setPopup(popup)
+        setPopup(marker, results[0], results[1])
+
     })
 }
 
 function renderWeatherTip(data, increment) {
 
-    console.log("test")
     let html = '<ul>';
     html += '<li>Feels Like: ' + Math.round(data.list[increment].main.feels_like) + String.fromCharCode(176) + 'F</li>';
-    html += '<li>Humidity: ' + Math.round(data.list[increment].main.humidity) + '%</li>';
-    html += '<li>Cloud Coverage: ' + Math.round(data.list[increment].clouds) + '%</li>';
+    html += '<li>Humidity: ' + data.list[increment].main.humidity + '%</li>';
+    html += '<li>Cloud Coverage: ' + Math.round(data.list[increment].clouds.all) + '%</li>';
     html += '<li>Wind Speed: ' + Math.round(data.list[increment].wind.speed) + '%</li>';
     html += '</ul>';
     html += '</span>';
@@ -122,7 +123,7 @@ function renderWeatherTip(data, increment) {
 }
 
 function renderWeather(data, increment) {
-    console.log("test 2")
+
     let formattedDate = new Date((data.list[increment].dt * 1000))
 
     let html = '<div class="mx-auto card-header">' + formattedDate.toDateString() + '</div>';
@@ -133,6 +134,17 @@ function renderWeather(data, increment) {
     html += '</ul>';
 
     return html;
+};
+
+function setPopup(marker, myLng, myLat) {
+
+    reverseGeocode({lat: myLat, lng: myLng}, MAPBOX_API_KEY).then(function(results) {
+
+        let popup = new mapboxgl.Popup()
+            .setHTML(results)
+        marker.setPopup(popup)
+
+    })
 };
 
 const addAddressSelection = document.querySelector('#addAddress');
