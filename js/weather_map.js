@@ -28,7 +28,7 @@ function callOpenWeather (lat, lon) {
         lon:   lon,
         units: "imperial"
     }).done(function(data) {
-
+        console.log(data)
         document.getElementById("currentCity").innerHTML = 'Current city: ' + data.city.name;
 
         document.getElementById("tip1").innerHTML = renderWeatherTip(data, 0);
@@ -42,7 +42,12 @@ function callOpenWeather (lat, lon) {
         document.getElementById("card3").innerHTML = renderWeather(data,16);
         document.getElementById("card4").innerHTML = renderWeather(data,24);
         document.getElementById("card5").innerHTML = renderWeather(data,32);
-    });
+
+        addSoundEffect(data)
+
+        music.play();
+     });
+
 };
 
 
@@ -120,6 +125,41 @@ function setPopup(marker, myLng, myLat) {
         marker.setPopup(popup)
     })
 };
+
+
+
+function addSoundEffect(data) {
+    let condition = 0;
+
+    if (data.list[0].weather[0].id >= 200 && data.list[0].weather[0].id <= 299){
+        document.getElementById("music").src = "audio/Air-raid-siren-sound-effect.mp3";
+        condition = 2;
+    } else if (data.list[0].weather[0].id >= 300 && data.list[0].weather[0].id <= 399) {
+        document.getElementById("music").src = "audio/Light-gentle-rain-sound.mp3";
+        condition = 3;
+    } else if (data.list[0].weather[0].id >= 500 && data.list[0].weather[0].id <= 599) {
+        document.getElementById("music").src = "audio/Heavy-rain-sound-effect-loop.mp3";
+        condition = 5;
+    } else if (data.list[0].weather[0].id >= 600 && data.list[0].weather[0].id <= 699) {
+        document.getElementById("music").src = "audio/Ice-sound-effect.mp3";
+        condition = 6;
+    } else if (data.list[0].weather[0].id >= 700 && data.list[0].weather[0].id <= 799) {
+        document.getElementById("music").src = "audio/Air-raid-siren-sound-effect.mp3";
+        condition = 7;
+    } else if (data.list[0].weather[0].id === 800) {
+        document.getElementById("music").src = "audio/birds chirping.mp3";
+        condition = 8;
+    } else if (data.list[0].weather[0].id >= 801 && data.list[0].weather[0].id <= 899) {
+        document.getElementById("music").src = "audio/Wind-noise-sound-effect.mp3";
+        condition = 9;
+    } else {
+        document.getElementById("music").src = "audio/bruh-sound-effect-1-6970.mp3";
+        condition = 10;
+    }
+
+    console.log(condition)
+
+}
 
 
 
