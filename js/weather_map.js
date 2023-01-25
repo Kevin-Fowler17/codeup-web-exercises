@@ -130,6 +130,7 @@ submitAddress.addEventListener('click', updateSearchBoxWeatherAndLocation);
 
 document.addEventListener("keypress", function(e) {
     if (e.key === "Enter") {
+        e.preventDefault();
         updateSearchBoxWeatherAndLocation();
     }
 });
