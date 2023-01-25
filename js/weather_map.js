@@ -8,18 +8,15 @@ function loadWeatherAndMap () {
 
 function updateSearchBoxWeatherAndLocation () {
     geocode(addAddressSelection.value, MAPBOX_API_KEY).then(function(results) {
+        console.log(results)
         callOpenWeather(results[1], results[0]);
         callMapBox(results[1], results[0], 18);
     })
 }
 
 function updateDragWeatherAndLocation (lat, lon) {
-    console.log(lat)
-    console.log(lon)
-    // geocode(lngLat, MAPBOX_API_KEY).then(function(results) {
-        callOpenWeather(lat, lon);
-        callMapBox(lat, lon, 18);
-    // })
+    callOpenWeather(lat, lon);
+    callMapBox(lat, lon, 18);
 }
 
 
@@ -51,6 +48,7 @@ function callOpenWeather (lat, lon) {
 
 
 function callMapBox (lat, lon, zoom) {
+
     mapboxgl.accessToken = MAPBOX_API_KEY;
     const map = new mapboxgl.Map({
         container: 'my-map',
@@ -67,14 +65,13 @@ function callMapBox (lat, lon, zoom) {
 
     function onDragEnd() {
         const lngLat = marker.getLngLat();
-        coordinates.style.display = 'block';
-        coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
+        // coordinates.style.display = 'block';
+        // coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
 
         map.jumpTo({
             center: lngLat
         })
 
-        // console.log(lngLat)
         updateDragWeatherAndLocation(lngLat.lat, lngLat.lng);
     }
 
@@ -82,7 +79,6 @@ function callMapBox (lat, lon, zoom) {
 
     setPopup(marker, lon, lat)
 };
-
 
 
 
@@ -118,16 +114,12 @@ function renderWeather(data, increment) {
 
 
 function setPopup(marker, myLng, myLat) {
-
     reverseGeocode({lat: myLat, lng: myLng}, MAPBOX_API_KEY).then(function(results) {
-        console.log("setPopup: " + results)
         let popup = new mapboxgl.Popup()
             .setHTML(results)
         marker.setPopup(popup)
-
     })
 };
-
 
 
 
@@ -136,3 +128,8 @@ let submitAddress = document.getElementById("submitAddress");
 
 submitAddress.addEventListener('click', updateSearchBoxWeatherAndLocation);
 
+document.addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+        updateSearchBoxWeatherAndLocation();
+    }
+});
