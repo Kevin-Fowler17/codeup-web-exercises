@@ -154,13 +154,63 @@
 
 <script>
 
-
-
-    function getUniqueValues(arr) {
-        return arr.filter((item, index) => arr.indexOf(item) === index);
+    const shoppingCart = {
+        "tax": .08,
+        "items": [
+            {
+                "title": "orange juice",
+                "price": 3.99,
+                "quantity": 1
+            },
+            {
+                "title": "rice",
+                "price": 1.99,
+                "quantity": 3
+            },
+            {
+                "title": "beans",
+                "price": 0.99,
+                "quantity": 3
+            },
+            {
+                "title": "chili sauce",
+                "price": 2.99,
+                "quantity": 1
+            },
+            {
+                "title": "chocolate",
+                "price": 0.75,
+                "quantity": 9
+            }
+        ]
     }
 
 
+
+    function mostSpentOnItem(arr) {
+
+        let itemMostSpentOn = {
+            "title": "",
+            "price": 0,
+            "quantity": 0
+        }
+
+
+        let totalSpend = arr.items.reduce(function (sum, item) {
+            return sum + (item.price * item.quantity);
+        }, 0)
+
+        let totalItems = arr.items.reduce(function (sum, item) {
+            return sum + item.quantity;
+        }, 0)
+
+        return totalSpend / totalItems;
+
+        return itemMostSpentOn;
+
+    }
+
+    console.log(mostSpentOnItem(shoppingCart));
 
 </script>
 
