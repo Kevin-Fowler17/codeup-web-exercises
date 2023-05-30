@@ -130,10 +130,17 @@
 // roundFloat(3.1415,3)
 
 
-function createPhoneNumber(numbers){
-
-    let arrSort = [arr.sort()]
-
-    return arrSort;
+var runningSum = function (nums) {
+    runningTotal = 0;
+    for (let i = 0; i < nums.length ; i++) {
+        runningTotal += runningTotal;
+    }
+    return runningTotal;
 }
+
+    console.log(runningSum([1,2,3,4]));
+
+
+
+
 

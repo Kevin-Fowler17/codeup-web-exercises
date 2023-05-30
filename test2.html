@@ -109,21 +109,171 @@
   //
   // isPalindrome(123)
 
-  function longestCommonPrefix(strs) {
+  // function longestCommonPrefix(strs) {
+  //     let prefix = "";
+  //
+  //     let strsSort = strs.sort(function (a,b) {
+  //         return a.length - b.length;})
+  //
+  //     if (strsSort[0] === "") {
+  //         prefix = '""'
+  //         return prefix;
+  //     } else {
+  //         for (let i = 0; i < strsSort[0].length; i++) {
+  //             console.log(strs[0].length)
+  //             char = strsSort[0].charAt(i);
+  //             if (strsSort[0].charAt(i) === strsSort[i].charAt(i)) {
+  //                 prefix += char
+  //                 console.log(char)
+  //             }
+  //         }
+  //     }
+  // }
+  //
+  // console.log(longestCommonPrefix(["flower","flow","flight"]))
+  // console.log(longestCommonPrefix(["dog","racecar","car"]))
+  // console.log(longestCommonPrefix(["",""]))
 
-      let prefix = strs.reduce(function(p,c){
-          for(r="",i=0;p[i]==c[i];r+=p[i],i++){}
-          return r;
-      });
-      let str = []
-      str.push('"' + prefix + '"')
-      return str[0]
+
+  // function name(str){
+  //     let arr = [];
+  //     for (let i = 0; i < str.length; i += 2) {
+  //         if (str.length - 1 === i ) {
+  //             let lastChar = `${str.substring(i)}_`
+  //             arr.push(lastChar)
+  //         } else {
+  //             arr.push(str.substring(i, i + 2));
+  //         }
+  //     }
+  //     return arr;
+  // }
+  //
+  // console.log(name('abc'));
+  // console.log(name('abcdef'));
+  //
+  //
+  // function solution(num) {
+  //
+  //     let multiplesOf3And5 = 0;
+  //
+  //     for (let i = 0; i < num; i++) {
+  //
+  //         if ((i % 3 === 0) || (i % 5 === 0)) {
+  //             multiplesOf3And5 += i;
+  //         } else if (i % 3 !== 0 && i % 5 !== 0) {
+  //             continue;
+  //         } else {
+  //             break;
+  //         }
+  //     }
+  //     return multiplesOf3And5;
+  // }
+  //
+  //
+  // console.log(solution (10));
+  // console.log(solution (1000));
+
+
+  // var runningSum = function (nums) {
+  //     let runningSumArray = [];
+  //     let runningTotal = 0;
+  //     for (let i = 0; i < nums.length ; i++) {
+  //         runningTotal += nums[i];
+  //         runningSumArray.push(runningTotal);
+  //     }
+  //     return runningSumArray;
+  // }
+  //
+  // console.log(runningSum([1,2,3,4]));
+
+  var pivotIndex = function (nums) {
+
+      let runningSumFromLeftArray = [0];
+      let runningTotalFromLeft = 0;
+
+      let runningSumFromRightArray = [];
+      let runningTotalFromRight = 0;
+
+      for (let i = 0; i < nums.length; i++) {
+          runningTotalFromLeft = runningTotalFromLeft + nums[i];
+          runningSumFromLeftArray.push(runningTotalFromLeft);
+      }
+
+      console.log(runningSumFromLeftArray)
+
+      for (let i = 1; i <= nums.length; i++) {
+          runningTotalFromRight = runningTotalFromRight + nums[nums.length - i];
+          runningSumFromRightArray.push(runningTotalFromRight);
+
+          console.log(runningSumFromRightArray)
+
+          for (let j = 0; (j < runningSumFromLeftArray.length - 1) & i > 1 ; j++) {
+              if (runningTotalFromRight === runningSumFromLeftArray[j]){
+                  return j;
+              }
+          }
+      }
+
+      return -1;
+
   }
 
-  console.log(longestCommonPrefix(["flower","flow","flight"]))
+  console.log(pivotIndex([-1,-1,-1,-1,-1,-1]))
+  // console.log(pivotIndex([1,2,3]))
+  // console.log(pivotIndex([2,1,-1]))
+
+
+  //
+  // let myBooks = [
+  //     {
+  //         bookTitle: "Book 1",
+  //         pageNum: 225
+  //     },
+  //     {
+  //         bookTitle: "Book 2",
+  //         pageNum: 250
+  //     },
+  //     {
+  //         bookTitle: "Book 3",
+  //         pageNum: 275
+  //     },
+  //     {
+  //         bookTitle: "Book 4",
+  //         pageNum: 300
+  //     },
+  //     {
+  //         bookTitle: "Book 5",
+  //         pageNum: 325
+  //     },
+  // ];
+  //
+  // console.log(myBooks)
+  //
+  // myBooks.forEach((book, index) => {
+  //     console.log(`Here's the title of this book: ${book.bookTitle}`);
+  // });
+
+
 
 
 </script>
+
+<!--<script>-->
+<!--    const longestCommonPrefix = (strs) => {-->
+<!--        if (!strs.length) return '';-->
+<!--        let prefix = strs[0];-->
+<!--        for (let i = strs.length; &#45;&#45;i;) {-->
+<!--            for (;strs[i].indexOf(prefix) !== 0;) {-->
+<!--                prefix = prefix.substring(0, prefix.length - 1);-->
+<!--                if (!prefix.length) return '';-->
+<!--            }-->
+<!--        }-->
+<!--        return prefix;-->
+<!--    };-->
+
+<!--    console.log(longestCommonPrefix(["flower","flow","flight"]))-->
+<!--    console.log(longestCommonPrefix(["dog","racecar","car"]))-->
+<!--</script>-->
 
 </body>
 </html>
