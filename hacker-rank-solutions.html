@@ -21,28 +21,54 @@
     // }
 
 
-    countingValleys(8, "UDDDUDUU")
+    // countingValleys(8, "UDDDUDUU")
+    //
+    // function countingValleys(steps, path) {
+    //     // Write your code here
+    //     let currentLocation = 0;
+    //     let timesBelowSeaLevel = 0;
+    //     let atSeaLevelOrAbove = true;
+    //     for (let i = 0; i < steps; i++) {
+    //         if (path.charAt(i) === "U") {
+    //             currentLocation += 1;
+    //         } else {
+    //             currentLocation -= 1;
+    //         }
+    //         if (currentLocation < 0 && atSeaLevelOrAbove === true) {
+    //             timesBelowSeaLevel += 1;
+    //             atSeaLevelOrAbove = false;
+    //         }
+    //         if (currentLocation === 0 && atSeaLevelOrAbove === false) {
+    //             atSeaLevelOrAbove = true;
+    //         }
+    //     }
+    //     console.log(timesBelowSeaLevel)
+    // }
 
-    function countingValleys(steps, path) {
+    // jumpingOnClouds([0,0,1,0,0,1,0]);//4
+    // jumpingOnClouds([0,0,0,1,0,0]);//3
+    //               0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9
+    jumpingOnClouds([0,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,1,0,1,0,0,0,1,0,0,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0,1,0,0]);// 28
+                    // 1 0 2   3 4   5   6 7   8   9   10  11  12  13  1415  16  17  18  19  20  21  2223  2425  26  2728
+    function jumpingOnClouds(c) {
         // Write your code here
-        let currentLocation = 0;
-        let timesBelowSeaLevel = 0;
-        let atSeaLevelOrAbove = true;
-        for (let i = 0; i < steps; i++) {
-            if (path.charAt(i) === "U") {
-                currentLocation += 1;
-            } else {
-                currentLocation -= 1;
-            }
-            if (currentLocation < 0 && atSeaLevelOrAbove === true) {
-                timesBelowSeaLevel += 1;
-                atSeaLevelOrAbove = false;
-            }
-            if (currentLocation === 0 && atSeaLevelOrAbove === false) {
-                atSeaLevelOrAbove = true;
+        let jumpCount = 0;
+        for (let i = 0; i < c.length; i++) {
+            console.log(i)
+            console.log("Current: " + jumpCount)
+            if (c[i+1]===0 && c[i+2]===0){
+                jumpCount += 1;
+                i++;
+            } else if (c[i+1]===1 && c[i+2]===0) {
+                jumpCount += 1;
+                i++;
+            } else if (c[i+1]===0 && c[i+2]===1) {
+                jumpCount += 1;
+            } else if (c[i+1]===0) {
+                jumpCount += 1;
             }
         }
-        console.log(timesBelowSeaLevel)
+        console.log("Count: " + jumpCount)
     }
 
 
