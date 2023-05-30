@@ -1,26 +1,49 @@
-
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
+    <meta charset="UTF-8">
+    <title>Hacker Rank Solutions</title>
 </head>
 <body>
 
 </body>
 <script>
 
-  sockMerchant(9, [10, 20, 20, 10, 10, 30, 50, 10, 20])
+    // sockMerchant(9, [10, 20, 20, 10, 10, 30, 50, 10, 20])
+    //
+    // function sockMerchant(n, ar) {
+    //   // Write your code here
+    //   let matchCount = 0;
+    //   for (let i = 1; i <= 100; i++){
+    //     let sockCount = ar.filter(sock => sock === i);
+    //     matchCount += Math.floor(sockCount.length / 2);
+    //   }
+    //   return matchCount;
+    // }
 
-  function sockMerchant(n, ar) {
-    // Write your code here
-    let matchCount = 0;
-    for (let i = 1; i <= 100; i++){
-      let sockCount = ar.filter(sock => sock === i);
-      matchCount += Math.floor(sockCount.length / 2);
+
+    countingValleys(8, "UDDDUDUU")
+
+    function countingValleys(steps, path) {
+        // Write your code here
+        let currentLocation = 0;
+        let timesBelowSeaLevel = 0;
+        let atSeaLevelOrAbove = true;
+        for (let i = 0; i < steps; i++) {
+            if (path.charAt(i) === "U") {
+                currentLocation += 1;
+            } else {
+                currentLocation -= 1;
+            }
+            if (currentLocation < 0 && atSeaLevelOrAbove === true) {
+                timesBelowSeaLevel += 1;
+                atSeaLevelOrAbove = false;
+            }
+            if (currentLocation === 0 && atSeaLevelOrAbove === false) {
+                atSeaLevelOrAbove = true;
+            }
+        }
+        console.log(timesBelowSeaLevel)
     }
-    return matchCount;
-  }
-
 
 
 </script>
