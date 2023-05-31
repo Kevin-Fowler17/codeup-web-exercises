@@ -8,6 +8,8 @@
 </body>
 <script>
 
+    // Warm up challenges
+
     // sockMerchant(9, [10, 20, 20, 10, 10, 30, 50, 10, 20])
     //
     // function sockMerchant(n, ar) {
@@ -75,21 +77,41 @@
     repeatedString("abcAc", 10)//4
     repeatedString("aab", 882787)//588525
     repeatedString("a", 1000000000000)//1000000000000
+    repeatedString("beeaabc", 711560125001)//203302892858
+    repeatedString("12345", 500)//0
+
 
     function repeatedString(s, n) {
-        // Write your code here
-        let string = "";
+        console.log("Break")
+        let strLength = s.length;
         let aCount = 0;
-        for (let i = 1; i <= n; i++){
-            string += s.toLowerCase();
-        }
-        // console.log(string)
-        for (let i = 0; i < n; i++){
-            if (string.charAt(i) === "a") {
+        let countOfWholeStrings = 0;
+        let aCountTotal = 0;
+        let remainingPartialString = 0;
+
+        for (let i = 0; i < strLength; i++) {
+            if (s.toLowerCase().charAt(i) === "a"){
                 aCount += 1;
             }
         }
+
+        countOfWholeStrings = Math.floor(n / strLength);
+        aCountTotal = countOfWholeStrings * aCount;
+        remainingPartialString = n - (countOfWholeStrings * strLength);
+
+        for (let i = 0; i < remainingPartialString; i++) {
+            if (s.toLowerCase().charAt(i) === "a"){
+                aCountTotal += 1;
+            }
+        }
+
+        console.log(strLength)
         console.log(aCount)
+        console.log(countOfWholeStrings)
+        // console.log(aCountTotal)
+        console.log(remainingPartialString)
+        console.log(aCountTotal)
+
     }
 
 
