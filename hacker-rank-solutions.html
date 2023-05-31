@@ -73,44 +73,56 @@
     //     console.log("Count: " + jumpCount)
     // }
 
-    repeatedString("abA", 10)//7
-    repeatedString("abcAc", 10)//4
-    repeatedString("aab", 882787)//588525
-    repeatedString("a", 1000000000000)//1000000000000
-    repeatedString("beeaabc", 711560125001)//203302892858
-    repeatedString("12345", 500)//0
+    // repeatedString("abA", 10)//7
+    // repeatedString("abcAc", 10)//4
+    // repeatedString("aab", 882787)//588525
+    // repeatedString("a", 1000000000000)//1000000000000
+    // repeatedString("beeaabc", 711560125001)//203302892858
+    // repeatedString("12345", 500)//0
+    //
+    //
+    // function repeatedString(s, n) {
+    //     console.log("Break")
+    //     let strLength = s.length;
+    //     let aCount = 0;
+    //     let countOfWholeStrings = 0;
+    //     let aCountTotal = 0;
+    //     let remainingPartialString = 0;
+    //
+    //     for (let i = 0; i < strLength; i++) {
+    //         if (s.toLowerCase().charAt(i) === "a"){
+    //             aCount += 1;
+    //         }
+    //     }
+    //
+    //     countOfWholeStrings = Math.floor(n / strLength);
+    //     aCountTotal = countOfWholeStrings * aCount;
+    //     remainingPartialString = n - (countOfWholeStrings * strLength);
+    //
+    //     for (let i = 0; i < remainingPartialString; i++) {
+    //         if (s.toLowerCase().charAt(i) === "a"){
+    //             aCountTotal += 1;
+    //         }
+    //     }
+    //
+    //     console.log(strLength)
+    //     console.log(aCount)
+    //     console.log(countOfWholeStrings)
+    //     // console.log(aCountTotal)
+    //     console.log(remainingPartialString)
+    //     console.log(aCountTotal)
+    //
+    // }
 
+    simpleArraySum([1,2,3,4,10,11])//31
 
-    function repeatedString(s, n) {
-        console.log("Break")
-        let strLength = s.length;
-        let aCount = 0;
-        let countOfWholeStrings = 0;
-        let aCountTotal = 0;
-        let remainingPartialString = 0;
+    function simpleArraySum(ar) {
+        // Write your code here
+        let sum = ar.reduce(function (mySum, num) {
+            return mySum + num;
+        }, 0)
 
-        for (let i = 0; i < strLength; i++) {
-            if (s.toLowerCase().charAt(i) === "a"){
-                aCount += 1;
-            }
-        }
-
-        countOfWholeStrings = Math.floor(n / strLength);
-        aCountTotal = countOfWholeStrings * aCount;
-        remainingPartialString = n - (countOfWholeStrings * strLength);
-
-        for (let i = 0; i < remainingPartialString; i++) {
-            if (s.toLowerCase().charAt(i) === "a"){
-                aCountTotal += 1;
-            }
-        }
-
-        console.log(strLength)
-        console.log(aCount)
-        console.log(countOfWholeStrings)
-        // console.log(aCountTotal)
-        console.log(remainingPartialString)
-        console.log(aCountTotal)
+        console.log(sum)
 
     }
 
