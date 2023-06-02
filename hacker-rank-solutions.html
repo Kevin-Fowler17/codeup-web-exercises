@@ -124,46 +124,59 @@
     //     console.log(sum)
     // }
 
-    hourglassSum([
-        [-1,-1,0,-9,-2,-2],
-        [-2,-1,-6,-8,-2,-5],
-        [-1,-1,-1,-2,-3,-4],
-        [-1,-9,-2,-4,-4,-5],
-        [-7,-3,-3,-2,-9,-9],
-        [-1,-3,-1,-2,-4,-5]
-        ])
-    function hourglassSum(arr) {
+    // hourglassSum([
+    //     [-1,-1,0,-9,-2,-2],
+    //     [-2,-1,-6,-8,-2,-5],
+    //     [-1,-1,-1,-2,-3,-4],
+    //     [-1,-9,-2,-4,-4,-5],
+    //     [-7,-3,-3,-2,-9,-9],
+    //     [-1,-3,-1,-2,-4,-5]
+    //     ])
+    // function hourglassSum(arr) {
+    //     // Write your code here
+    //     let highestHourGlassSum = 0;
+    //     let rowCounter = 0;
+    //     let columnCounter = 0;
+    //
+    //     for (let i = 1; i <= 16; i++) {
+    //         let hourGlassSum = 0;
+    //         hourGlassSum += arr[0 + rowCounter][0 + columnCounter];
+    //         hourGlassSum += arr[0 + rowCounter][1 + columnCounter];
+    //         hourGlassSum += arr[0 + rowCounter][2 + columnCounter];
+    //         hourGlassSum += arr[1 + rowCounter][1 + columnCounter];
+    //         hourGlassSum += arr[2 + rowCounter][0 + columnCounter];
+    //         hourGlassSum += arr[2 + rowCounter][1 + columnCounter];
+    //         hourGlassSum += arr[2 + rowCounter][2 + columnCounter];
+    //
+    //         if (i % 4 !== 0) {
+    //             columnCounter += 1;
+    //         } else {
+    //             columnCounter = 0;
+    //             rowCounter += 1;
+    //         }
+    //
+    //         if ((hourGlassSum > highestHourGlassSum) || (i === 1)) {
+    //             highestHourGlassSum = hourGlassSum;
+    //         }
+    //
+    //         console.log(i + ": " + hourGlassSum)
+    //     }
+    //     console.log(highestHourGlassSum)
+    // }
+
+
+    rotLeft([1,2,3,4,5], 4)
+
+    function rotLeft(a, d) {
         // Write your code here
-        let highestHourGlassSum = 0;
-        let rowCounter = 0;
-        let columnCounter = 0;
+        let removedElement = 0;
 
-        for (let i = 1; i <= 16; i++) {
-            let hourGlassSum = 0;
-            hourGlassSum += arr[0 + rowCounter][0 + columnCounter];
-            hourGlassSum += arr[0 + rowCounter][1 + columnCounter];
-            hourGlassSum += arr[0 + rowCounter][2 + columnCounter];
-            hourGlassSum += arr[1 + rowCounter][1 + columnCounter];
-            hourGlassSum += arr[2 + rowCounter][0 + columnCounter];
-            hourGlassSum += arr[2 + rowCounter][1 + columnCounter];
-            hourGlassSum += arr[2 + rowCounter][2 + columnCounter];
-
-            if (i % 4 !== 0) {
-                columnCounter += 1;
-            } else {
-                columnCounter = 0;
-                rowCounter += 1;
-            }
-
-            if ((hourGlassSum > highestHourGlassSum) || (i === 1)) {
-                highestHourGlassSum = hourGlassSum;
-            }
-
-            console.log(i + ": " + hourGlassSum)
+        for (let i = 0; i < d; i++) {
+            removedElement = a.shift();
+            a.push(removedElement);
         }
-        console.log(highestHourGlassSum)
+        console.log(a)
     }
-
 
 
 
