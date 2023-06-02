@@ -165,19 +165,68 @@
     // }
 
 
-    rotLeft([1,2,3,4,5], 4)
+    // rotLeft([1,2,3,4,5], 4)
+    //
+    // function rotLeft(a, d) {
+    //     // Write your code here
+    //     let removedElement = 0;
+    //
+    //     for (let i = 0; i < d; i++) {
+    //         removedElement = a.shift();
+    //         a.push(removedElement);
+    //     }
+    //     console.log(a)
+    // }
 
-    function rotLeft(a, d) {
-        // Write your code here
-        let removedElement = 0;
 
-        for (let i = 0; i < d; i++) {
-            removedElement = a.shift();
-            a.push(removedElement);
+    // minimumBribes([2,1,5,3,4])
+    //
+    // function minimumBribes(q) {
+    //     // Write your code here
+    //     let totalBribes = 0;
+    //
+    //     for (let i = 0; i < q.length - 1; i++) {
+    //         let lineMovement = 0;
+    //         lineMovement = q[i] - (i + 1);
+    //         if (lineMovement === 0) {
+    //             continue;
+    //         } else if (lineMovement === 1 || lineMovement === 2) {
+    //             totalBribes += lineMovement;
+    //         } else if (lineMovement >= 3) {
+    //             return "Too chaotic";
+    //         }
+    //     }
+    //     return totalBribes;
+    // }
+
+    function minimumBribes(q) {
+        let bribes = 0;
+
+        for (let i = q.length - 1; i >= 0; i--) {
+            if (q[i] - (i + 1) > 2) {
+                console.log("Too chaotic");
+                return;
+            }
+
+            for (let j = Math.max(0, q[i] - 2); j < i; j++) {
+                if (q[j] > q[i]) {
+                    bribes++;
+                }
+            }
         }
-        console.log(a)
+
+        console.log(bribes);
     }
 
+    // Example usage:
+    const testCases = [
+        [5, 1, 2, 3, 7, 8, 6, 4],
+        [1, 2, 5, 3, 7, 8, 6, 4]
+    ];
+
+    for (let i = 0; i < testCases.length; i++) {
+        minimumBribes(testCases[i]);
+    }
 
 
 </script>
