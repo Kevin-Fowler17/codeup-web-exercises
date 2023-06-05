@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Narcissistic Numbers</title>
+</head>
+<body>
+
+<ul id="output"></ul>
+
+</body>
+<script>
+  let counter = 0;
+  let narcissisticNumbers = [];
+
+  for (let i = 1; counter < 25; i++) {
+    let iString = i.toString();
+    let digits = i.toString().length;
+    let sumDigits = 0;
+
+      for (let j = 0; j < digits; j++) {
+          sumDigits = sumDigits + (Math.pow(iString[j], digits));
+      }
+
+      if (i === sumDigits) {
+          narcissisticNumbers.push(i);
+          counter++
+      }
+
+  }
+
+  let outputList = document.getElementById("output");
+
+  narcissisticNumbers.forEach(number => {
+      let li = document.createElement("li");
+      li.textContent = number;
+      outputList.appendChild(li);
+  });
+
+</script>
+</html>
