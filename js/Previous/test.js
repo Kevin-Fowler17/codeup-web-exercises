@@ -1758,3 +1758,44 @@ fruits.sort().reverse();
 
 let fruitsAndVeggies = fruits;
 fruitsAndVeggies = fruitsAndVeggies.concat(vegetables);
+
+function addOne(num) {
+    return num + 1;
+}
+
+function isPositive(num) {
+    return num > 0
+}
+
+function isNegative(num) {
+    return num < 0;
+}
+
+function isOdd(num) {
+    return num % 2 != 0;
+}
+
+function isEven(num) {
+    return num % 2 === 0;
+}
+
+function identity(string) {
+    return string;
+}
+
+function isPositiveOdd(num) {
+    return num % 2 != 0 && num > 0;
+}
+
+function isPositiveEven(num) {
+    return num % 2 == 0 && num > 0;
+}
+
+function isNegativeOdd(num) {
+    return num % 2 !== 0 && num < 0;
+}
+
+function isNegativeEven(num) {
+    return num % 2 === 0 && num < 0;
+}
+
