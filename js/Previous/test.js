@@ -1733,3 +1733,28 @@ assert(mostSpentOnItem(shoppingCart), {
     "quantity": 9
 }, "Exercise 101");
 addToDone("Exercise 101 is complete.")
+
+
+
+var doingJSRightNow = true;
+
+let onMarsRightNow = false;
+
+let fruits = ["mango", "banana", "guava", "kiwi", "strawberry"];
+
+let vegetables = ["eggplant", "broccoli", "carrot", "cauliflower", "zucchini"];
+
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+fruits.push("tomato");
+
+vegetables.push("tomato");
+
+someNumbers.reverse();
+
+vegetables.sort();
+
+fruits.sort().reverse();
+
+let fruitsAndVeggies = fruits;
+fruitsAndVeggies = fruitsAndVeggies.concat(vegetables);
