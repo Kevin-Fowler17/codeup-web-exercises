@@ -1799,3 +1799,38 @@ function isNegativeEven(num) {
     return num % 2 === 0 && num < 0;
 }
 
+function half(num) {
+    return num / 2;
+}
+
+function double(num) {
+    return num * 2;
+}
+
+function triple(num) {
+    return num * 3;
+}
+
+function reverseSign(num) {
+    return num * -1;
+}
+
+function absoluteValue(num) {
+    return Math.abs(num);
+}
+
+function isMultipleOfThree(num) {
+    return num % 3 === 0;
+}
+
+function isMultipleOfFive(num) {
+    return num % 5 === 0;
+}
+
+function square(num) {
+    return num * num;
+}
+
+function add(num1, num2) {
+    return num1 + num2;
+}
