@@ -1834,3 +1834,44 @@ function square(num) {
 function add(num1, num2) {
     return num1 + num2;
 }
+
+function cube(num) {
+    return Math.pow(num, 3);
+}
+
+function squareRoot(num) {
+    return Math.sqrt(num);
+}
+
+function subtract(num1, num2) {
+    return num1 - num2;
+}
+
+function multiply(num1, num2) {
+    return num1 * num2;
+}
+
+function divide(num1, num2) {
+    return num1 / num2;
+}
+
+function quotient (num1, num2) {
+    return Math.floor(num1 / num2);
+}
+
+function remainder(num1, num2) {
+    return Math.floor(num1 % num2);
+}
+
+function sumOfSquares(num1, num2) {
+    return (num1 * num1) + (num2 * num2);
+}
+
+function timesTwoPlusThree(num) {
+    return (num * 2) + 3;
+}
+
+function areaOfRectangle(num1, num2) {
+    return num1 * num2;
+}
+
