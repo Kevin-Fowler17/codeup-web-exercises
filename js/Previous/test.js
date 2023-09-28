@@ -1947,3 +1947,72 @@ function first(seq) {
         return seq.charAt(0)
     }
 }
+
+function second(seq) {
+    if (Array.isArray(seq)) {
+        return seq[1];
+    } else {
+        return seq.charAt(1);
+    }
+}
+
+function third(seq) {
+    if (Array.isArray(seq)) {
+        return seq[2];
+    } else {
+        return seq.charAt(2);
+    }
+}
+
+function forth(seq) {
+    if (Array.isArray(seq)) {
+        return seq[3];
+    } else {
+        return seq.charAt(3);
+    }
+}
+
+function last(seq) {
+    if (Array.isArray(seq)) {
+        return seq[seq.length - 1];
+    } else {
+        return seq.charAt(seq.length - 1);
+    }
+}
+
+function secondToLast(seq) {
+    if (Array.isArray(seq)) {
+        return seq[seq.length - 2];
+    } else {
+        return seq.charAt(seq.length - 2);
+    }
+}
+
+function thirdToLast(seq) {
+    if (Array.isArray(seq)) {
+        return seq[seq.length - 3];
+    } else {
+        return seq.charAt(seq.length - 3);
+    }
+}
+
+function firstAndSecond(seq) {
+    return [seq[0], seq[1]]
+}
+
+function firstAndLast(seq) {
+    return [seq[0], seq[seq.length - 1]];
+}
+
+function firstToLast(seq) {
+    seq.push(seq.shift());
+    return seq;
+}
+
+function sumAll(seq) {
+    let total = seq.reduce((accumulator, currentValue) => {
+        return accumulator + currentValue
+    },0);
+    return total;
+}
+
