@@ -1875,3 +1875,75 @@ function areaOfRectangle(num1, num2) {
     return num1 * num2;
 }
 
+function areaOfCircle(radius) {
+    return Math.pow(radius, 2) * Math.PI;
+}
+
+function circumference(radius) {
+    return Math.PI * 2 * radius;
+}
+
+function isVowel(str) {
+    return "aeiou".indexOf(str.toLowerCase()) != -1;
+}
+
+function hasVowels(str) {
+    for (let i = 0; i < str.length; i++) {
+        if ("aeiou".indexOf(str.charAt(i).toLowerCase()) != -1) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function countVowels(str) {
+    let vowelCount = 0;
+    for (let i = 0; i < str.length; i++) {
+        if ("aeiou".indexOf(str.charAt(i).toLowerCase()) != -1) {
+            vowelCount ++;
+        }
+    }
+    return vowelCount;
+}
+
+function removeVowels(str) {
+    let strMinusVowels = "";
+    for (let i = 0; i < str.length; i++) {
+        if ("aeiouAEIOU".indexOf(str.charAt(i)) === -1) {
+            strMinusVowels += str.charAt(i);
+        }
+    }
+    return strMinusVowels;
+}
+
+function startsWithVowel(str) {
+    if ("aeiou".indexOf(str.charAt(0).toLowerCase()) != -1) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function endsWithVowel(str) {
+    if ("aeiou".indexOf(str.charAt(str.length - 1).toLowerCase()) != -1) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function startsAndEndsWithVowel(str) {
+    if (("aeiou".indexOf(str.charAt(0).toLowerCase()) != -1) && ("aeiou".indexOf(str.charAt(str.length - 1).toLowerCase()) != -1)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function first(seq) {
+    if (Array.isArray(seq)) {
+        return seq[0];
+    } else {
+        return seq.charAt(0)
+    }
+}
