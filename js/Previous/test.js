@@ -2097,3 +2097,101 @@ function onlyNegativeNumbers(seq) {
     return negativeNumbers;
 }
 
+function hasEvens(seq) {
+    for (let i = 0; i < seq.length; i++) {
+        if (seq[i] % 2 === 0) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function countEvens(seq) {
+    let count = 0;
+    for (let i = 0; i < seq.length; i++) {
+        if (seq[i] % 2 === 0) {
+            count++
+        }
+    }
+    return count;
+}
+
+function hasOdds(seq) {
+    for (let i = 0; i < seq.length; i++) {
+        if (seq[i] % 2 !== 0) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function countOdds(seq) {
+    let count = 0;
+    for (let i = 0; i < seq.length; i++) {
+        if (seq[i] % 2 !== 0) {
+            count++
+        }
+    }
+    return count;
+}
+
+function countNegatives(seq) {
+    let count = 0;
+    for (let i = 0; i < seq.length; i++) {
+        if (seq[i] < 0) {
+            count++
+        }
+    }
+    return count;
+}
+
+function countPositives(seq) {
+    let count = 0;
+    for (let i = 0; i < seq.length; i++) {
+        if (seq[i] > 0) {
+            count++
+        }
+    }
+    return count;
+}
+
+function onlyPositiveEvens(seq) {
+    let positiveEvenNumbers = [];
+    for (let i = 0; i < seq.length; i++) {
+        if (seq[i] > 0 && seq[i] % 2 === 0) {
+            positiveEvenNumbers.push(seq[i])
+        }
+    }
+    return positiveEvenNumbers;
+}
+
+function onlyPositiveOdds(seq) {
+    let positiveOddNumbers = [];
+    for (let i = 0; i < seq.length; i++) {
+        if (seq[i] > 0 && seq[i] % 2 !== 0) {
+            positiveOddNumbers.push(seq[i])
+        }
+    }
+    return positiveOddNumbers;
+}
+
+function onlyNegativeEvens(seq) {
+    let negativeEvenNumbers = [];
+    for (let i = 0; i < seq.length; i++) {
+        if (seq[i] < 0 && seq[i] % 2 === 0) {
+            negativeEvenNumbers.push(seq[i])
+        }
+    }
+    return negativeEvenNumbers;
+}
+
+function onlyNegativeOdds(seq) {
+    let negativeOddNumbers = [];
+    for (let i = 0; i < seq.length; i++) {
+        if (seq[i] < 0 && seq[i] % 2 !== 0) {
+            negativeOddNumbers.push(seq[i])
+        }
+    }
+    return negativeOddNumbers;
+}
+
