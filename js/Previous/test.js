@@ -2016,3 +2016,84 @@ function sumAll(seq) {
     return total;
 }
 
+function mean(seq) {
+    let total = seq.reduce((accumulator, currentValue) => {
+        return accumulator + currentValue
+    },0);
+    return total / seq.length;
+}
+
+function median(seq) {
+    seq.sort((a, b) => a - b) ;
+    let midPoint = Math.floor(seq.length / 2);
+
+    if (seq.length % 2 === 0) {
+        return (seq[midPoint - 1] + seq[midPoint]) / 2;
+    } else {
+        return seq[midPoint];
+    }
+}
+
+function maxMinusMin(arr) {
+    arr.sort((a, b) => a - b);
+    return arr[arr.length - 1] - arr[0];
+}
+
+function productOfAll(seq) {
+    let total = 1;
+    for (let i = 0; i < seq.length; i++) {
+        total = total * seq[i];
+    }
+    return total;
+}
+
+function getHighestNumber(seq) {
+    seq.sort((a, b) => a - b);
+    return seq[seq.length - 1];
+}
+
+function getSmallestNumber(seq) {
+    seq.sort((a, b) => a - b);
+    return seq[0];
+}
+
+function onlyOddNumbers(seq) {
+    let oddNumbers = [];
+    for (let i = 0; i < seq.length; i++) {
+        if (seq[i] % 2 !== 0) {
+            oddNumbers.push(seq[i])
+        }
+    }
+    return oddNumbers;
+}
+
+function onlyEvenNumbers(seq) {
+    let evenNumbers = [];
+    for (let i = 0; i < seq.length; i++) {
+        if (seq[i] % 2 === 0) {
+            evenNumbers.push(seq[i])
+        }
+    }
+    return evenNumbers;
+}
+
+function onlyPositiveNumbers(seq) {
+    let positiveNumbers = [];
+    for (let i = 0; i < seq.length; i++) {
+        if (seq[i] > 0) {
+            positiveNumbers.push(seq[i])
+        }
+    }
+    return positiveNumbers;
+}
+
+function onlyNegativeNumbers(seq) {
+    let negativeNumbers = [];
+    for (let i = 0; i < seq.length; i++) {
+        if (seq[i] < 0) {
+            negativeNumbers.push(seq[i])
+        }
+    }
+    return negativeNumbers;
+}
+
