@@ -2195,3 +2195,67 @@ function onlyNegativeOdds(seq) {
     return negativeOddNumbers;
 }
 
+function shortestString(arr) {
+    let shortest = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i].length < shortest.length) {
+            shortest = arr[i];
+        }
+    }
+    return shortest;
+}
+
+function longestString(arr) {
+    let longest = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i].length > longest.length) {
+            longest = arr[i];
+        }
+    }
+    return longest;
+}
+
+function getUniqueValues(arr) {
+    return arr.filter((item, index) => arr.indexOf(item) === index);
+}
+
+function elementsTimesTwo(arr) {
+    return arr.map((number) => number * 2);
+}
+
+function flatten(arr) {
+    return arr.flat();
+}
+
+function addOneToArray(arr) {
+    return arr.map((number) => number + 1);
+}
+
+function getPaperTitle(obj) {
+    let {title} = obj;
+    return title;
+}
+
+function getYearPublished(obj) {
+    let {year_published} = obj;
+    return year_published;
+}
+
+function getPrice(obj) {
+    let {price} = obj;
+    return price;
+}
+
+function getBookAuthor(obj) {
+    let {author} = obj;
+    return author;
+}
+
+function getNumberOfBooks(obj) {
+    return obj.length;
+}
+
+function totalOfBookPrices(obj) {
+    let totalOfPrices = obj.reduce((accumulator, product) => accumulator + product.price, 0);
+    return totalOfPrices;
+}
