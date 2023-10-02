@@ -2259,3 +2259,43 @@ function totalOfBookPrices(obj) {
     let totalOfPrices = obj.reduce((accumulator, product) => accumulator + product.price, 0);
     return totalOfPrices;
 }
+
+function getAverageBookPrice(obj) {
+    let totalOfPrices = obj.reduce((accumulator, product) => accumulator + product.price, 0);
+    return totalOfPrices / obj.length;
+}
+
+function highestPriceBook(obj) {
+    obj.sort((a, b) => a.price - b.price);
+    return obj[obj.length - 1];
+}
+
+function lowestPriceBook(obj) {
+    obj.sort((a, b) => a.price - b.price);
+    return obj[0];
+}
+
+function getTaxRate(obj) {
+    return obj.tax;
+}
+
+function numberOfItemTypes(obj) {
+    return obj.items.length;
+}
+
+function totalNumberOfItems(obj) {
+    let totalItems = obj.items.reduce((accumulator, product) => accumulator + product.quantity, 0);
+    return totalItems;
+}
+
+function getAverageItemPrice(obj) {
+    let totalPrices = obj.items.reduce((accumulator, product) => accumulator + product.price, 0);
+    return totalPrices / obj.items.length;
+}
+
+function getAverageSpentPerItem(obj) {
+    let totalPrices = obj.items.reduce((accumulator, product) => accumulator + (product.price * product.quantity), 0);
+    let totalItems = obj.items.reduce((accumulator, product) => accumulator + product.quantity, 0);
+    return totalPrices / totalItems;
+}
+
