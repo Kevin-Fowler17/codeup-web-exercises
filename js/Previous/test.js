@@ -2299,3 +2299,12 @@ function getAverageSpentPerItem(obj) {
     return totalPrices / totalItems;
 }
 
+function mostSpentOnItem (obj) {
+    let mostSpentOn = [obj.items[0]];
+    for (let i = 1; i < obj.items.length; i++){
+        if ((obj.items[i - 1].price * obj.items[i - 1].quantity) < (obj.items[i].price * obj.items[i].quantity)) {
+            mostSpentOn = obj.items[i];
+        }
+    }
+    return mostSpentOn;
+}
