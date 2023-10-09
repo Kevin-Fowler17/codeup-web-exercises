@@ -25,7 +25,19 @@ function getPerimeter(length, width) {
     return perimeter;
 }
 
+/*
+ * Create the function factorial here
+ */
+function factorial(n) {
 
+    let total = 1;
+
+    for (let i = 0; n > 1; i++) {
+        total *= n;
+        n--
+    }
+    return total;
+}
 
 
 // Day 2
