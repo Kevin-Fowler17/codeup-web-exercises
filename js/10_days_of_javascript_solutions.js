@@ -194,3 +194,58 @@ function getLetter(s) {
 
 
 // Day 3
+/**
+ *   Return the second largest number in the array.
+ *   @param {Number[]} nums - An array of numbers.
+ *   @return {Number} The second largest number in the array.
+ **/
+function getSecondLargest(nums) {
+    // Complete the function
+    let secondLargestNumber = 0;
+    nums.sort(function(a, b) {
+        return a - b;
+    })
+
+    for (let i = 1; i < nums.length; i++) {
+        if (nums[nums.length - i] < nums[nums.length - 1]) {
+            secondLargestNumber = nums[nums.length - i]
+            break;
+        }
+    }
+
+    return secondLargestNumber;
+}
+
+/*
+* Complete the reverseString function
+* Use console.log() to print to stdout.
+*/
+function reverseString(s) {
+    try {
+        let reversedString = s.split("").reverse().join("");
+        console.log(reversedString);
+    } catch (error) {
+        console.log("s.split is not a function")
+        console.log(s)
+    }
+}
+
+/*
+ * Complete the isPositive function.
+ * If 'a' is positive, return "YES".
+ * If 'a' is 0, throw an Error with the message "Zero Error"
+ * If 'a' is negative, throw an Error with the message "Negative Error"
+ */
+function isPositive(a) {
+    try{
+        if(a > 0) {
+            return "YES";
+        } else if (a === 0) {
+            throw new Error("Zero Error");
+        } else {
+            throw new Error("Negative Error");
+        }
+    } catch (error) {
+        return error.message;
+    }
+}
