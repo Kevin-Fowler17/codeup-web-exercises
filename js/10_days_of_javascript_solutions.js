@@ -313,3 +313,37 @@ class Square extends Rectangle{
     }
 }
 
+/*
+ * Determine the original side lengths and return an array:
+ * - The first element is the length of the shorter side
+ * - The second element is the length of the longer side
+ *
+ * Parameter(s):
+ * literals: The tagged template literal's array of strings.
+ * expressions: The tagged template literal's array of expression values (i.e., [area, perimeter]).
+ */
+function sides(literals, ...expressions) {
+    let [area, perimeter] = expressions;
+
+    let value = Math.sqrt(perimeter * perimeter - (16 * area));
+
+    return [((perimeter - value) / 4), ((perimeter + value) / 4)];
+}
+
+/*
+ * Modify and return the array so that all even elements are doubled and all odd elements are tripled.
+ *
+ * Parameter(s):
+ * nums: An array of numbers.
+ */
+function modifyArray(nums) {
+
+    let workingArray = nums => nums.map(value => (value % 2 === 0) ? value * 2 : value * 3);
+
+    let newArray = workingArray(nums);
+
+    return newArray;
+}
+
+
+// Day 6
