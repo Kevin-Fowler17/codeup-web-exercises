@@ -483,3 +483,71 @@ btn.addEventListener("click", function() {
     let current_button_value = this.innerHTML;
     this.innerHTML = parseInt(current_button_value) + 1;
 });
+
+// Buttons Container
+// CSS
+// #btns {
+//     width: 75%;
+// }
+//
+// .buttons {
+//     width: 30%;
+//     height: 48px;
+//     font-size: 24px;
+// }
+
+// HTML
+// <!DOCTYPE html>
+// <html>
+// <head>
+// <meta charset="utf-8">
+//     <link rel="stylesheet" href="css/buttonsGrid.css" type="text/css">
+//     <title>Buttons Grid</title>
+// </head>
+// <body>
+//
+// <div id="btns">
+//     <button id="button1" class="buttons">1</button>
+//     <button id="button2" class="buttons">2</button>
+//     <button id="button3" class="buttons">3</button>
+//     <button id="button4" class="buttons">4</button>
+//     <button id="button5" class="buttons">5</button>
+//     <button id="button6" class="buttons">6</button>
+//     <button id="button7" class="buttons">7</button>
+//     <button id="button8" class="buttons">8</button>
+//     <button id="button9" class="buttons">9</button>
+//     </div>
+//
+//     <script src="js/buttonsGrid.js" type="text/javascript"></script>
+//     </body>
+//     </html>
+
+let button1 = document.getElementById("button1");
+let button2 = document.getElementById("button2");
+let button3 = document.getElementById("button3");
+let button4 = document.getElementById("button4");
+let button6 = document.getElementById("button6");
+let button7 = document.getElementById("button7");
+let button8 = document.getElementById("button8");
+let button9 = document.getElementById("button9");
+
+function rotateButtons() {
+    [button1.innerText,
+        button2.innerText,
+        button3.innerText,
+        button4.innerText,
+        button6.innerText,
+        button7.innerText,
+        button8.innerText,
+        button9.innerText] =
+        [button4.innerText,
+            button1.innerText,
+            button2.innerText,
+            button7.innerText,
+            button3.innerText,
+            button8.innerText,
+            button9.innerText,
+            button6.innerText]
+}
+
+button5.addEventListener("click", rotateButtons)
