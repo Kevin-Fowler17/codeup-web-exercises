@@ -551,3 +551,67 @@ function rotateButtons() {
 }
 
 button5.addEventListener("click", rotateButtons)
+
+
+// Day 9
+// CSS
+// body {
+//     width: 33%;
+// }
+//
+// #result {
+//     background-color: lightgray;
+// border: solid;
+// height: 48px;
+// font-size: 20px;
+// }
+//
+// #btn0, #btn1 {
+//     background-color: lightgreen;
+// color: brown;
+// }
+//
+// #btnClr, #btnEql {
+//     background-color: darkgreen;
+// color: white;
+// }
+//
+// #btnSum, #btnSub, #btnMul, #btnDiv {
+//     background-color: black;
+// color: red;
+// }
+//
+// .button {
+//     width: 25%;
+//     height: 36px;
+//     font-size: 18px;
+// margin: 0px;
+// float: left;
+// }
+
+// HTML
+// <!DOCTYPE html>
+// <html>
+// <head>
+// <meta charset="utf-8">
+//     <link rel="stylesheet" href="css/binaryCalculator.css" type="text/css">
+//     <title>Binary Calculator</title>
+// </head>
+// <body>
+// <div id="container">
+//     <div id="result"></div>
+//     <div id="btns">
+//     <button id="btn0" class="button" onclick="clkZero">0</button>
+//     <button id="btn1" class="button" onclick="clkOne">1</button>
+//     <button id="btnClr" class="button" onclick="clkClr">C</button>
+//     <button id="btnEql" class="button" onclick="clkEql">=</button>
+//     <button id="btnSum" class="button" onclick="clkSum">+</button>
+//     <button id="btnSub" class="button" onclick="clkSub">-</button>
+//     <button id="btnMul" class="button" onclick="clkMul">*</button>
+//     <button id="btnDiv" class="button" onclick="clkDiv">/</button>
+//     </div>
+//     </div>
+//
+//     <script src="js/binaryCalculator.js" type="text/javascript"></script>
+//     </body>
+//     </html>
