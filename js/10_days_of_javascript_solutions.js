@@ -615,3 +615,47 @@ button5.addEventListener("click", rotateButtons)
 //     <script src="js/binaryCalculator.js" type="text/javascript"></script>
 //     </body>
 //     </html>
+
+let result = document.getElementById("result");
+
+function checkIfOperator(){
+    if (result.innerHTML.endsWith('+') || result.innerHTML.endsWith('-') || result.innerHTML.endsWith('*') || result.innerHTML.endsWith('/')) {
+        return true;
+    }
+}
+
+function clickedZero() {
+    result.innerHTML +='0';
+}
+
+function clickedOne() {
+    result.innerHTML +='1';
+}
+
+function clickedSum() {
+    if(result.innerHTML.length != 0 && !checkOperator()){
+        result.innerHTML +='+';
+    }
+}
+
+function clickedSub() {
+    if(result.innerHTML.length != 0 && !checkOperator()){
+        result.innerHTML +='-';
+    }
+}
+
+function clickedMul() {
+    if(result.innerHTML.length != 0 && !checkOperator()){
+        result.innerHTML +="*";
+    }
+}
+
+function clickedDiv() {
+    if(result.innerHTML.length != 0 && !checkOperator()){
+        result.innerHTML +="/";
+    }
+}
+
+function clickedClr() {
+    result.innerHTML = '';
+}
