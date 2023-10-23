@@ -43,3 +43,97 @@ function findMedian(arr) {
 
     return (mid1 + mid2) / 2;
 }
+
+
+/*
+ * Complete the 'plusMinus' function below.
+ *
+ * The function accepts INTEGER_ARRAY arr as parameter.
+ */
+
+function plusMinus(arr) {
+    // Write your code here
+    let posCount = 0;
+    let negCount = 0;
+    let zeroCount = 0;
+
+    let posPercent = 0;
+    let negPercent = 0;
+    let ZeroPercent = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > 0) {
+            posCount++
+        } else if (arr[i] < 0) {
+            negCount++
+        } else {
+            zeroCount++
+        }
+    }
+
+    posPercent = (posCount / arr.length);
+    negPercent = (negCount / arr.length);
+    ZeroPercent = (zeroCount / arr.length);
+
+    console.log (posPercent.toFixed(6));
+    console.log (negPercent.toFixed(6));
+    console.log (ZeroPercent.toFixed(6));
+
+}
+
+
+/*
+ * Complete the 'miniMaxSum' function below.
+ *
+ * The function accepts INTEGER_ARRAY arr as parameter.
+ */
+
+function miniMaxSum(arr) {
+    // Write your code here
+    arr.sort((a, b) => a - b);
+
+    let minSum = 0;
+    let maxSum = 0;
+
+    minSum = arr[0] + arr[1] + arr[2] + arr[3];
+    maxSum = arr[1] + arr[2] + arr[3] + arr[4];
+
+    console.log (minSum + " " + maxSum);
+
+}
+
+function main() {
+
+    const arr = readLine().replace(/\s+$/g, '').split(' ').map(arrTemp => parseInt(arrTemp, 10));
+
+    miniMaxSum(arr);
+}
+
+
+/*
+ * Complete the 'timeConversion' function below.
+ *
+ * The function is expected to return a STRING.
+ * The function accepts STRING s as parameter.
+ */
+
+function timeConversion(s) {
+    // Write your code here
+    let isPM = s.includes("PM");
+    s = s.replace(/(AM|PM)/, "");
+
+    let timeArr = s.split(":");
+    let hours = parseInt(timeArr[0], 10);
+
+    if (isPM && hours !== 12) {
+        hours += 12;
+    } else if (!isPM && hours === 12){
+        hours = 0
+    }
+
+    let hoursFormatted = hours.toString().padStart(2, "0");
+    let militrayTime = [hoursFormatted, timeArr[1],  timeArr[2]].join(":");
+
+    return militrayTime;
+
+}
