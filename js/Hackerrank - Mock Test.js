@@ -1,3 +1,4 @@
+// Day 1
 /*
  * Complete the 'fizzBuzz' function below.
  *
@@ -137,3 +138,32 @@ function timeConversion(s) {
     return militrayTime;
 
 }
+
+
+// Day 2
+/*
+ * Complete the 'lonelyinteger' function below.
+ *
+ * The function is expected to return an INTEGER.
+ * The function accepts INTEGER_ARRAY a as parameter.
+ */
+function lonelyinteger(a) {
+    // Write your code here
+    let count = {};
+
+    for (let num of a) {
+        if (count[num] === undefined) {
+            count[num] = 1;
+        } else {
+            count[num]++;
+        }
+    }
+
+    for (let num in count) {
+        if (count[num] === 1) {
+            return parseInt(num);
+        }
+    }
+
+}
+
