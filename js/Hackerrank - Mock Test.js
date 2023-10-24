@@ -167,3 +167,23 @@ function lonelyinteger(a) {
 
 }
 
+/*
+ * Complete the 'diagonalDifference' function below.
+ *
+ * The function is expected to return an INTEGER.
+ * The function accepts 2D_INTEGER_ARRAY arr as parameter.
+ */
+function diagonalDifference(arr) {
+    // Write your code here
+    let totalDiagLeftToRight = 0;
+    let totalDiagRightToLeft = 0;
+    let arrLength = arr.length;
+
+    for (let i = 0; i < arrLength; i++) {
+        totalDiagLeftToRight += arr[i][i];
+        totalDiagRightToLeft += arr[i][arrLength - 1 - i];
+    }
+
+    return Math.abs(totalDiagLeftToRight - totalDiagRightToLeft);
+}
+
