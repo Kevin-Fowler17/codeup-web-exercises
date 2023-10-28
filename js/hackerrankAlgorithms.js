@@ -44,3 +44,27 @@ function birthdayCakeCandles(candles) {
 }
 
 
+/*
+ * Complete the 'staircase' function below.
+ *
+ * The function accepts INTEGER n as parameter.
+ */
+
+function staircase(n) {
+    // Write your code here
+    for (let i = 1; i <= n; i++) {
+
+        let outputString = '';
+
+        for (let j = 1; j <= n - i; j++) {
+            outputString += ' ';
+        }
+
+        for (let k = 1; k <= i; k++) {
+            outputString += '#';
+        }
+
+        console.log (outputString)
+    }
+
+}
