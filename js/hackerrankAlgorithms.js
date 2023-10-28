@@ -26,3 +26,21 @@ function gradingStudents(grades) {
 }
 
 
+/*
+ * Complete the 'birthdayCakeCandles' function below.
+ *
+ * The function is expected to return an INTEGER.
+ * The function accepts INTEGER_ARRAY candles as parameter.
+ */
+
+function birthdayCakeCandles(candles) {
+    // Write your code here
+    let heightOfTallestCandle = Math.max(...candles);
+
+    let countOfTallestCandle = candles.filter(candle => candle === heightOfTallestCandle).length;
+
+    return countOfTallestCandle;
+
+}
+
+
