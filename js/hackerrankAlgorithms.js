@@ -131,3 +131,34 @@ function saveThePrisoner(n, m, s) {
         currSeat++;
     }
 }
+
+
+/*
+ * Complete the 'squares' function below.
+ *
+ * The function is expected to return an INTEGER.
+ * The function accepts following parameters:
+ *  1. INTEGER a
+ *  2. INTEGER b
+ */
+
+function squares(a, b) {
+    // Write your code here
+    let countOfSquareInts = 0;
+
+    for (let i = a; i <= b; i++) {
+        let squareRootOfI = Math.sqrt(i);
+
+        if (squareRootOfI % 1 === 0) {
+            countOfSquareInts++
+        }
+    }
+    return countOfSquareInts;
+}
+
+// let squareRootA = Math.ceil(Math.sqrt(a));
+// let squareRootB = Math.floor(Math.sqrt(b));
+//
+// let countOfSquareInts = squareRootB - squareRootA + 1;
+//
+// return countOfSquareInts;
