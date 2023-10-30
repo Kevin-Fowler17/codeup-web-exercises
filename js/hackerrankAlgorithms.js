@@ -102,3 +102,32 @@ function pageCount(n, p) {
 }
 
 
+/*
+ * Complete the 'saveThePrisoner' function below.
+ *
+ * The function is expected to return an INTEGER.
+ * The function accepts following parameters:
+ *  1. INTEGER n
+ *  2. INTEGER m
+ *  3. INTEGER s
+ */
+
+function saveThePrisoner(n, m, s) {
+    // Write your code here
+    // return (s - 1 + m - 1) % n + 1;
+
+    let currSeat = s;
+
+    for (let i = 1; i <= m; i++) {
+
+        if (currSeat > n) {
+            currSeat = 1;
+        }
+
+        if (i === m) {
+            return currSeat;
+        }
+
+        currSeat++;
+    }
+}
